@@ -83,10 +83,30 @@ void CTexture::Init(void)
 		"data/TEXTURE/TitleBG.jpg",//タイトル背景
 		&m_pTexture[TitleBG]);
 
+	//テクスチャの読み込み
 	D3DXCreateTextureFromFile(pDevice,
 		"data/TEXTURE/Effect000.jpg",//エフェクト（粒）
 		&m_pTexture[Effect]);
 
+<<<<<<< HEAD
+	//テクスチャの読み込み
+	D3DXCreateTextureFromFile(pDevice,
+		"data/TEXTURE/star.png",//エフェクト（星）
+		&m_pTexture[Star]);
+
+=======
+	D3DXCreateTextureFromFile(pDevice,
+		"data/TEXTURE/Start000.png",//スタート文字
+		&m_pTexture[Start]);
+
+	D3DXCreateTextureFromFile(pDevice,
+		"data/TEXTURE/Finish000.png",//フィニッシュ文字
+		&m_pTexture[Finish]);
+
+	D3DXCreateTextureFromFile(pDevice,
+		"data/TEXTURE/rule.png",//ルール
+		&m_pTexture[Rule]);
+>>>>>>> 55785667e568469be055e3913eebc29e528cf78f
 }
 
 //=============================================================================

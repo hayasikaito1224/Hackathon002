@@ -38,9 +38,11 @@ HRESULT CTitle::Init(void)
 	m_nAlpha = 255;
 	CBg::Create(CTexture::TitleBG, CScene::OBJTYPE_BG, false);	//背景
 	
-	m_Polygon[0] = CPolygon::Create(D3DXVECTOR3(SCREEN_WIDTH/2.0f, SCREEN_HEIGHT / 2 - 100.0f, 0.0f), D3DXVECTOR3(350.0f, 200.0f, 0.0f), CTexture::TitleLogo);	//タイトルロゴ
+	m_Polygon[0] = CPolygon::Create(D3DXVECTOR3(SCREEN_WIDTH/3.0f, SCREEN_HEIGHT / 2 - 100.0f, 0.0f), D3DXVECTOR3(340.0f, 200.0f, 0.0f), CTexture::TitleLogo);	//タイトルロゴ
 	
-	m_Polygon[1] = CPolygon::Create(D3DXVECTOR3(SCREEN_WIDTH/2.0f, SCREEN_HEIGHT / 2 + 200.0f, 0.0f), D3DXVECTOR3(280.0f, 50.0f, 0.0f), CTexture::TitleEnter);	//タイトルロゴ
+	m_Polygon[1] = CPolygon::Create(D3DXVECTOR3(SCREEN_WIDTH/3.0f, SCREEN_HEIGHT / 2 + 200.0f, 0.0f), D3DXVECTOR3(280.0f, 50.0f, 0.0f), CTexture::TitleEnter);	//エンター文字
+
+	m_Polygon[2] = CPolygon::Create(D3DXVECTOR3(SCREEN_WIDTH / 5.0f * 4, SCREEN_HEIGHT / 2.0f, 0.0f), D3DXVECTOR3(220.0f, 280.0f, 0.0f), CTexture::Rule);	//ルール
 	return S_OK;
 }
 //--------------------------------------------
@@ -48,7 +50,7 @@ HRESULT CTitle::Init(void)
 //--------------------------------------------
 void CTitle::Uninit(void)
 {
-	for (int nCntPolygon = 0; nCntPolygon < 2; nCntPolygon++)
+	for (int nCntPolygon = 0; nCntPolygon < MAX_TITLE_POLYGON; nCntPolygon++)
 	{
 		if (m_Polygon[nCntPolygon] != NULL)
 		{
