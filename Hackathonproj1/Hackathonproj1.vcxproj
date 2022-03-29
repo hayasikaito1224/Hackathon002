@@ -160,15 +160,18 @@
     <ClInclude Include="main.h" />
     <ClInclude Include="manager.h" />
     <ClInclude Include="mouse.h" />
+    <ClInclude Include="number.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="Polygon.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="result.h" />
     <ClInclude Include="scene.h" />
     <ClInclude Include="scene2D.h" />
+    <ClInclude Include="score.h" />
     <ClInclude Include="sound.h" />
     <ClInclude Include="texture.h" />
     <ClInclude Include="title.h" />
+    <ClInclude Include="weight.h" />
     <ClInclude Include="XInput.h" />
   </ItemGroup>
   <ItemGroup>
@@ -181,15 +184,18 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="manager.cpp" />
     <ClCompile Include="mouse.cpp" />
+    <ClCompile Include="number.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="polygon.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="result.cpp" />
     <ClCompile Include="scene.cpp" />
     <ClCompile Include="scene2D.cpp" />
+    <ClCompile Include="score.cpp" />
     <ClCompile Include="sound.cpp" />
     <ClCompile Include="texture.cpp" />
     <ClCompile Include="title.cpp" />
+    <ClCompile Include="weight.cpp" />
     <ClCompile Include="XInput.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

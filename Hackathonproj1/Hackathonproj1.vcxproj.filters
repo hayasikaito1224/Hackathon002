@@ -72,6 +72,15 @@
     <ClInclude Include="texture.h">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="score.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="number.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="weight.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="fade.cpp">
@@ -129,6 +138,15 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="title.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="number.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="score.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="weight.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
