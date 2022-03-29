@@ -14,6 +14,9 @@
 #include "Polygon.h"
 #include "directinput.h"
 #include "weight.h"
+
+//エフェクト
+#include "SetEffect.h"
 //------------------------------------
 //マクロ定義
 //------------------------------------
@@ -92,7 +95,7 @@ void CPlayer::Incline()
 	if (pKeyBoard->GetPress(DIK_SPACE) == true)
 	{
 		AddState(m_fMoveAngle);
-
+		CSetEffect::SetEffect(0, D3DXVECTOR3(55.0f, 381.0f, {}), {});
 	}
 	else
 	{
