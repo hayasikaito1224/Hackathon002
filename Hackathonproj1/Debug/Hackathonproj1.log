@@ -1,3 +1,6 @@
-﻿  Movement.cpp
+﻿  effect.cpp
+  LoadEffect.cpp
+c:\users\student\desktop\git\hackathon002\hackathonproj1\loadeffect.cpp(165): warning C4800: 'int': ブール値を 'true' または 'false' に強制的に設定します (警告の処理)
+  コードを生成中...
   Hackathonproj1.vcxproj -> C:\Users\student\Desktop\git\Hackathon002\Hackathonproj1\Debug\Hackathonproj1.exe
   Hackathonproj1.vcxproj -> C:\Users\student\Desktop\git\Hackathon002\Hackathonproj1\Debug\Hackathonproj1.pdb (Full PDB)
