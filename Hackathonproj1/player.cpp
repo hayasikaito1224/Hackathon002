@@ -94,12 +94,17 @@ void CPlayer::Draw()
 //-------------------------------------------
 void CPlayer::Incline()
 {
+
+	D3DXVECTOR3 aa;
 	//スペースを押したら
 	CInputKeyBoard *pKeyBoard = CManager::GetInputKeyboard();
 	if (pKeyBoard->GetPress(DIK_SPACE) == true)
 	{
 		AddState(m_fMoveAngle);
-		CSetEffect::SetEffect(0, D3DXVECTOR3(55.0f, 381.0f, {}), {});
+		CSetEffect::SetEffect(0, m_pPlayer->GetEffect(), {});
+
+		aa = m_pPlayer->GetRotatePos(0);
+
 	}
 	else
 	{

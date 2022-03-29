@@ -71,6 +71,8 @@ void CPolygon::Uninit()
 void CPolygon::Update()
 {
 	CScene2D::Update();
+
+	CScene2D::SetCol(m_col);
 }
 
 //=============================================================================
@@ -104,4 +106,12 @@ CPolygon *CPolygon::Create(D3DXVECTOR3 pos, D3DXVECTOR3 scale, CTexture::Type te
 	}
 
 	return pPolygon;
+}
+
+//=============================================================================
+// ÉJÉâÅ[ê›íËèàóù
+//=============================================================================
+void CPolygon::SetCol(D3DXCOLOR col)
+{
+	m_col = col;
 }
