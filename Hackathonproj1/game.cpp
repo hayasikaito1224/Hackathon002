@@ -20,7 +20,7 @@
 #include <random>
 
 static const D3DXVECTOR3 BalanceSize = { 250.0f, 125.0f, 0.0f };//秤の大きさ
-static const D3DXVECTOR3 BalancePos = { SCREEN_WIDTH/2, -200.0f, 0.0f };//秤の位置
+static const D3DXVECTOR3 BalancePos = { SCREEN_WIDTH/2, 550.0f, 0.0f };//秤の位置
 
 //静的メンバ変数宣言
 CBg		*CGame::m_pBg = nullptr;
@@ -67,6 +67,8 @@ HRESULT CGame::Init()
 		int nTargetScore = randTargetScore(mt);
 		CData *pData = CManager::GetData();
 		pData->SetTargetScore(nTargetScore * 100);
+
+		pData->ReverseNowGame();
 	}
 	//背景の生成
 	CBg::Create(CTexture::GameBg, CScene::OBJTYPE_BG, false);
@@ -99,6 +101,7 @@ HRESULT CGame::Init()
 	m_fAlpha = 1.0f;
 	m_bNextMode = false;
 	m_nTimer = 0;
+
 	return S_OK;
 }
 //--------------------------------------------
