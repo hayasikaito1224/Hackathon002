@@ -83,10 +83,17 @@ void CTexture::Init(void)
 		"data/TEXTURE/TitleBG.jpg",//タイトル背景
 		&m_pTexture[TitleBG]);
 
+<<<<<<< HEAD
 	D3DXCreateTextureFromFile(pDevice,
 		"data/TEXTURE/Effect000.jpg",//エフェクト（粒）
 		&m_pTexture[Effect]);
 
+=======
+	//テクスチャの読み込み
+	D3DXCreateTextureFromFile(pDevice,
+		"data/TEXTURE/Effect000.jpg",//エフェクト（粒）
+		&m_pTexture[Effect]);
+>>>>>>> bdf46d5d62cb52b16167f9877ef945ad1014e527
 }
 
 //=============================================================================

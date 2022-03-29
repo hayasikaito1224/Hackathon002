@@ -22,7 +22,6 @@ private:
 	float m_fScore;//スコア
 	float m_fTargetScore;//目標のスコア
 	bool m_bNowGame;//原罪ゲーム中か
-	bool m_bBeforeGameCount[7];
 };
 
 
