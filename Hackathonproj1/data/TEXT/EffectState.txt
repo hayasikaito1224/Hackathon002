@@ -101,7 +101,7 @@ END_EFFECTSTATE2D
 EFFECTSTATE2D
 	PATTERN = 4				//動きのパターン
 	POS = 640.0 360.0				//座標
-	ROTATE = 0.06					//回転
+	ROTATE = 0.3					//回転
 	SIZE = 20.0						//大きさ
 	ADDSIZE = 0.0					//大きさ変動
 	COLOR = 255 255 255 255			//カラー
