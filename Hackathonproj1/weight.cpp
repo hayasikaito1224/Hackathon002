@@ -8,6 +8,7 @@
 #include "manager.h"
 #include "renderer.h"
 #include "keyboard.h"
+#include "data.h"
 
 //=============================================================================
 // コンストラクタ
@@ -57,9 +58,12 @@ void CWeight::Uninit(void)
 //=============================================================================
 void CWeight::Update(void)
 {
-	if (CManager::GetInputKeyboard()->GetPress(DIK_SPACE))
+	if (CManager::GetData()->GetNowGame())
 	{
-		m_nWeight--;
+		if (CManager::GetInputKeyboard()->GetPress(DIK_SPACE))
+		{
+			m_nWeight--;
+		}
 	}
 
 	if (m_nWeight > MAX_WEIGHT)

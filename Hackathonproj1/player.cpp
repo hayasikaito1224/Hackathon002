@@ -14,6 +14,7 @@
 #include "Polygon.h"
 #include "directinput.h"
 #include "weight.h"
+#include "data.h"
 
 //エフェクト
 #include "SetEffect.h"
@@ -32,7 +33,7 @@
 CPlayer::CPlayer(OBJTYPE nPriority) : CScene(nPriority)
 {
 	m_pPlayer = nullptr;
-	m_fSandRemaining = 500.0f;
+	m_fSandRemaining = 300.0f;
 }
 //--------------------------
 //デストラクト
@@ -73,11 +74,14 @@ void CPlayer::Uninit()
 //-------------------------------------------
 void CPlayer::Update()
 {
-	CXInput *pGamePad = CManager::GetXInput();
-	CInputKeyBoard *pKeyBoard = CManager::GetInputKeyboard();
+	if (CManager::GetData()->GetNowGame())
+	{
+		CXInput *pGamePad = CManager::GetXInput();
+		CInputKeyBoard *pKeyBoard = CManager::GetInputKeyboard();
 
-	//傾ける処理
-	Incline();
+		//傾ける処理
+		Incline();
+	}
 }
 //-------------------------------------------
 //描画処理
@@ -90,12 +94,17 @@ void CPlayer::Draw()
 //-------------------------------------------
 void CPlayer::Incline()
 {
+
+	D3DXVECTOR3 aa;
 	//スペースを押したら
 	CInputKeyBoard *pKeyBoard = CManager::GetInputKeyboard();
 	if (pKeyBoard->GetPress(DIK_SPACE) == true)
 	{
 		AddState(m_fMoveAngle);
-		CSetEffect::SetEffect(0, D3DXVECTOR3(55.0f, 381.0f, {}), {});
+		CSetEffect::SetEffect(0, m_pPlayer->GetEffect(), {});
+
+		aa = m_pPlayer->GetRotatePos(0);
+
 	}
 	else
 	{
