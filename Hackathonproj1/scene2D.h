@@ -27,7 +27,7 @@ typedef struct
 class CScene2D : public CScene
 {
 public:
-	CScene2D(OBJTYPE nPriority);
+	CScene2D(OBJTYPE nPriority = OBJTYPE_NONE);
 	~CScene2D();
 	HRESULT Init(CTexture::Type type);
 	HRESULT Init(void);

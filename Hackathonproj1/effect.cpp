@@ -10,7 +10,11 @@
 //*****************************************************************************
 //コンストラクタ
 //*****************************************************************************
+<<<<<<< HEAD
 CEffect::CEffect(int nPriority) : CScene2D(OBJTYPE_EFFECT)
+=======
+CEffect::CEffect(OBJTYPE nPriority) : CScene(nPriority)
+>>>>>>> 67577fbc9be71ca3b64adcba33a82070c32b98f4
 {
 	m_Color = D3DXCOLOR(0.0f, 0.0f, 0.0f, 0.0f);
 	m_MinColor = D3DXCOLOR(0.0f, 0.0f, 0.0f, 0.0f);
