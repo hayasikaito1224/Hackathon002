@@ -14,6 +14,7 @@
 #include "Polygon.h"
 #include "directinput.h"
 #include "weight.h"
+#include "data.h"
 
 //エフェクト
 #include "SetEffect.h"
@@ -32,7 +33,7 @@
 CPlayer::CPlayer(OBJTYPE nPriority) : CScene(nPriority)
 {
 	m_pPlayer = nullptr;
-	m_fSandRemaining = 500.0f;
+	m_fSandRemaining = 300.0f;
 }
 //--------------------------
 //デストラクト
@@ -73,11 +74,14 @@ void CPlayer::Uninit()
 //-------------------------------------------
 void CPlayer::Update()
 {
-	CXInput *pGamePad = CManager::GetXInput();
-	CInputKeyBoard *pKeyBoard = CManager::GetInputKeyboard();
+	if (CManager::GetData()->GetNowGame())
+	{
+		CXInput *pGamePad = CManager::GetXInput();
+		CInputKeyBoard *pKeyBoard = CManager::GetInputKeyboard();
 
-	//傾ける処理
-	Incline();
+		//傾ける処理
+		Incline();
+	}
 }
 //-------------------------------------------
 //描画処理

@@ -10,6 +10,7 @@ CData::CData()
 {
 	m_fScore = 0.0f;
 	m_fTargetScore = 0.0f;
+	m_bNowGame = false;
 }
 //--------------------------------------------
 //デストラクタ

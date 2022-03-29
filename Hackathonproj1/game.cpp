@@ -16,7 +16,9 @@
 #include "weight.h"
 #include "time.h"
 #include "data.h"
+#include "goalscore.h"
 #include <random>
+
 static const D3DXVECTOR3 BalanceSize = { 250.0f, 125.0f, 0.0f };//秤の大きさ
 static const D3DXVECTOR3 BalancePos = { SCREEN_WIDTH/2, 550.0f, 0.0f };//秤の位置
 
@@ -26,6 +28,7 @@ CPlayer	*CGame::m_Player = nullptr;
 CPolygon *CGame::m_Polygon = nullptr;
 CWeight *CGame::m_Weight = nullptr;
 CTime *CGame::m_Time = nullptr;
+CGoalScore *CGame::m_GoalScore = nullptr;
 
 static float s_texrotx = 0.0f;
 static float s_texseax = 0.0f;
@@ -44,6 +47,7 @@ CGame::CGame()
 	m_Time = nullptr;
 	m_bPush = false;
 	m_bEnd = false;
+	m_GoalScore = nullptr;
 }
 //--------------------------------------------
 //デストラクタ
@@ -59,10 +63,12 @@ HRESULT CGame::Init()
 	{//目標のスコアの生成
 		std::random_device random;	// 非決定的な乱数生成器
 		std::mt19937_64 mt(random());            // メルセンヌ・ツイスタの64ビット版、引数は初期シード
-		std::uniform_real_distribution<> randTargetScore(0.0f, 30.0f);
-		int nTargetScore = randTargetScore(mt) * 10;
+		std::uniform_real_distribution<> randTargetScore(10.0f, 16.0f);
+		int nTargetScore = randTargetScore(mt);
 		CData *pData = CManager::GetData();
-		pData->SetTargetScore(nTargetScore);
+		pData->SetTargetScore(nTargetScore * 100);
+
+		pData->ReverseNowGame();
 	}
 	//背景の生成
 	CBg::Create(CTexture::GameBg, CScene::OBJTYPE_BG, false);
@@ -77,7 +83,13 @@ HRESULT CGame::Init()
 	//時間用数字の生成
 	if (!m_Time)
 	{
-		m_Time = CTime::Create(D3DXVECTOR3((SCREEN_WIDTH / 2) - 50, 50.0f, 0.0f), D3DXVECTOR3(40.0f, 60.0f, 0.0f));
+		m_Time = CTime::Create(D3DXVECTOR3((SCREEN_WIDTH / 2.0f) - 50.0f, 50.0f, 0.0f), D3DXVECTOR3(40.0f, 60.0f, 0.0f));
+	}
+
+	//目標重量用数字の生成
+	if (!m_GoalScore)
+	{
+		m_GoalScore = CGoalScore::Create(D3DXVECTOR3(SCREEN_WIDTH - (40.0f * 8.0f), SCREEN_HEIGHT - (60.0f * 2.0f), 0.0f), D3DXVECTOR3(40.0f, 60.0f, 0.0f));
 	}
 
 	//プレイヤーの生成
@@ -89,6 +101,7 @@ HRESULT CGame::Init()
 	m_fAlpha = 1.0f;
 	m_bNextMode = false;
 	m_nTimer = 0;
+
 	return S_OK;
 }
 //--------------------------------------------
@@ -119,6 +132,12 @@ void CGame::Uninit()
 	{
 		m_Time->Uninit();
 		m_Time = nullptr;
+	}
+
+	if (m_GoalScore != nullptr)
+	{
+		m_GoalScore->Uninit();
+		m_GoalScore = nullptr;
 	}
 }
 //--------------------------------------------
