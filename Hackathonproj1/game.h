@@ -10,6 +10,7 @@
 class CBg;
 class CPlayer;
 class CPolygon;
+class CScore;
 
 class CGame
 {
@@ -23,12 +24,14 @@ public:
 	void Draw();
 
 	static CPlayer *GetPlayer() { return m_Player; }
+	static CScore *GetScore() { return m_Score; }
 
 private:
 
 	static CBg			*m_pBg;
 	static CPlayer		*m_Player;
 	static CPolygon		*m_Polygon;
+	static CScore		*m_Score;
 	bool m_bPush;
 	bool m_bEnd;
 	float				m_fAlpha;

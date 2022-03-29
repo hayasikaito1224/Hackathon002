@@ -13,11 +13,13 @@
 #include "Polygon.h"
 #include "XInput.h"
 #include "directinput.h"
+#include "score.h"
 
 //静的メンバ変数宣言
 CBg		*CGame::m_pBg = nullptr;
 CPlayer	*CGame::m_Player = nullptr;
 CPolygon *CGame::m_Polygon = nullptr;
+CScore *CGame::m_Score = nullptr;
 
 static float s_texrotx = 0.0f;
 static float s_texseax = 0.0f;
@@ -32,6 +34,7 @@ CGame::CGame()
 	m_Player = nullptr;
 	m_pBg = nullptr;
 	m_Polygon = nullptr;
+	m_Score = nullptr;
 	m_bPush = false;
 	m_bEnd = false;
 }
@@ -46,12 +49,16 @@ CGame::~CGame()
 //--------------------------------------------
 HRESULT CGame::Init()
 {
-
-
 	//プレイヤーの生成
 	if (!m_Player)
 	{
 		m_Player = CPlayer::Create();
+	}
+
+	//プレイヤーの生成
+	if (!m_Score)
+	{
+		m_Score = CScore::Create(D3DXVECTOR3(50.0f, 50.0f, 50.0f), D3DXVECTOR3(30.0f, 50.0f, 50.0f));
 	}
 
 	m_fAlpha = 1.0f;
@@ -75,6 +82,12 @@ void CGame::Uninit()
 	{
 		m_Polygon->Uninit();
 		m_Polygon = nullptr;
+	}
+
+	if (m_Score != nullptr)
+	{
+		m_Score->Uninit();
+		m_Score = nullptr;
 	}
 }
 //--------------------------------------------
