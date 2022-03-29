@@ -24,6 +24,11 @@ public:
 	{
 		None = -1,		// テクスチャ無し
 		Test,			// 仮テクスチャ
+		Number,			// 番号
+		Bag,			// 袋
+		GameBg,			//ゲームの背景
+		Balance,		//秤
+		Fade,			//フェード
 		Max,			// テクスチャの最大数
 	} Type;
 

@@ -43,6 +43,31 @@ void CTexture::Init(void)
 		"data/TEXTURE/test_texture.png",//仮テクスチャ
 		&m_pTexture[Test]);
 
+	//テクスチャの読み込み
+	D3DXCreateTextureFromFile(pDevice,
+		"data/TEXTURE/number.png",//番号
+		&m_pTexture[Number]);
+
+	//テクスチャの読み込み
+	D3DXCreateTextureFromFile(pDevice,
+		"data/TEXTURE/Hukuro.png",//袋
+		&m_pTexture[Bag]);
+
+	//テクスチャの読み込み
+	D3DXCreateTextureFromFile(pDevice,
+		"data/TEXTURE/BackGround.png",//ゲーム背景
+		&m_pTexture[GameBg]);
+
+	//テクスチャの読み込み
+	D3DXCreateTextureFromFile(pDevice,
+		"data/TEXTURE/Hakari.png",//秤
+		&m_pTexture[Balance]);
+
+	//テクスチャの読み込み
+	D3DXCreateTextureFromFile(pDevice,
+		"data/TEXTURE/black.png",//フェード
+		&m_pTexture[Fade]);
+
 }
 
 //=============================================================================
