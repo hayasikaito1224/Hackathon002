@@ -13,13 +13,13 @@
 #include "Polygon.h"
 #include "XInput.h"
 #include "directinput.h"
-#include "score.h"
+#include "weight.h"
 
 //静的メンバ変数宣言
 CBg		*CGame::m_pBg = nullptr;
 CPlayer	*CGame::m_Player = nullptr;
 CPolygon *CGame::m_Polygon = nullptr;
-CScore *CGame::m_Score = nullptr;
+CWeight *CGame::m_Weight = nullptr;
 
 static float s_texrotx = 0.0f;
 static float s_texseax = 0.0f;
@@ -34,7 +34,7 @@ CGame::CGame()
 	m_Player = nullptr;
 	m_pBg = nullptr;
 	m_Polygon = nullptr;
-	m_Score = nullptr;
+	m_Weight = nullptr;
 	m_bPush = false;
 	m_bEnd = false;
 }
@@ -56,9 +56,9 @@ HRESULT CGame::Init()
 	}
 
 	//プレイヤーの生成
-	if (!m_Score)
+	if (!m_Weight)
 	{
-		m_Score = CScore::Create(D3DXVECTOR3(50.0f, 50.0f, 50.0f), D3DXVECTOR3(30.0f, 50.0f, 50.0f));
+		m_Weight = CWeight::Create(D3DXVECTOR3(50.0f, 50.0f, 50.0f), D3DXVECTOR3(30.0f, 50.0f, 50.0f));
 	}
 
 	m_fAlpha = 1.0f;
@@ -84,10 +84,10 @@ void CGame::Uninit()
 		m_Polygon = nullptr;
 	}
 
-	if (m_Score != nullptr)
+	if (m_Weight != nullptr)
 	{
-		m_Score->Uninit();
-		m_Score = nullptr;
+		m_Weight->Uninit();
+		m_Weight = nullptr;
 	}
 }
 //--------------------------------------------
