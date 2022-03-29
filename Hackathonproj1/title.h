@@ -5,7 +5,7 @@
 #define _TITLE_H
 #include "main.h"
 #include "scene.h"
-#define MAX_TITLE_POLYGON (5)
+#define MAX_TITLE_POLYGON (3)
 //‘O•ûéŒ¾
 class CBg;
 class CPolygon;

@@ -87,6 +87,17 @@ void CTexture::Init(void)
 		"data/TEXTURE/Effect000.jpg",//エフェクト（粒）
 		&m_pTexture[Effect]);
 
+	D3DXCreateTextureFromFile(pDevice,
+		"data/TEXTURE/Start000.png",//スタート文字
+		&m_pTexture[Start]);
+
+	D3DXCreateTextureFromFile(pDevice,
+		"data/TEXTURE/Finish000.png",//フィニッシュ文字
+		&m_pTexture[Finish]);
+
+	D3DXCreateTextureFromFile(pDevice,
+		"data/TEXTURE/rule.png",//ルール
+		&m_pTexture[Rule]);
 }
 
 //=============================================================================
