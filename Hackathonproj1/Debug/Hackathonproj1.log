@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿  XInput.cpp
 c:\users\student\desktop\hackathon002\hackathonproj1\xinput.cpp(48): warning C4800: 'int': ブール値を 'true' または 'false' に強制的に設定します (警告の処理)
   weight.cpp
@@ -35,3 +36,8 @@ c:\users\student\desktop\hackathon002\hackathonproj1\loadeffect.cpp(165): warnin
 sound.obj : warning LNK4204: 'C:\Users\student\Desktop\Hackathon002\Hackathonproj1\Debug\vc140.pdb' に参照するモジュールのデバッグ情報がありません。デバッグ情報を無視してオブジェクトをリンクします。
   Hackathonproj1.vcxproj -> C:\Users\student\Desktop\Hackathon002\Hackathonproj1\Debug\Hackathonproj1.exe
   Hackathonproj1.vcxproj -> C:\Users\student\Desktop\Hackathon002\Hackathonproj1\Debug\Hackathonproj1.pdb (Full PDB)
+=======
+﻿  manager.cpp
+  Hackathonproj1.vcxproj -> C:\Users\student\Desktop\git接続フォルダ\Hackathon002\Hackathonproj1\Debug\Hackathonproj1.exe
+  Hackathonproj1.vcxproj -> C:\Users\student\Desktop\git接続フォルダ\Hackathon002\Hackathonproj1\Debug\Hackathonproj1.pdb (Full PDB)
+>>>>>>> 3ad8328b00c121c17b1dd9d2271785d35fdf3891
