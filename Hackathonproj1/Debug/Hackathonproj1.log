@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-﻿  SetEffect.cpp
-  Hackathonproj1.vcxproj -> C:\Users\student\Desktop\git\Hackathon002\Hackathonproj1\Debug\Hackathonproj1.exe
-  Hackathonproj1.vcxproj -> C:\Users\student\Desktop\git\Hackathon002\Hackathonproj1\Debug\Hackathonproj1.pdb (Full PDB)
-=======
-<<<<<<< HEAD
-﻿  weight.cpp
-  Hackathonproj1.vcxproj -> C:\Users\student\Desktop\Gitゲームフォルダ\Hackathon002\Hackathonproj1\Debug\Hackathonproj1.exe
-  Hackathonproj1.vcxproj -> C:\Users\student\Desktop\Gitゲームフォルダ\Hackathon002\Hackathonproj1\Debug\Hackathonproj1.pdb (Full PDB)
-=======
-﻿  game.cpp
-c:\users\student\desktop\hackathon002\hackathonproj1\game.cpp(73): warning C4244: '初期化中': 'double' から 'int' への変換です。データが失われる可能性があります。
-c:\users\student\desktop\hackathon002\hackathonproj1\game.cpp(75): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+﻿  result.cpp
   Hackathonproj1.vcxproj -> C:\Users\student\Desktop\Hackathon002\Hackathonproj1\Debug\Hackathonproj1.exe
   Hackathonproj1.vcxproj -> C:\Users\student\Desktop\Hackathon002\Hackathonproj1\Debug\Hackathonproj1.pdb (Full PDB)
->>>>>>> 218ca42a751e9f017049e967380adfe47706ec8a
->>>>>>> c4158115b0fa6a10a01d631dab72fb5906278af5

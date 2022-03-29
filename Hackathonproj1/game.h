@@ -29,6 +29,7 @@ public:
 	static CWeight *GetWeight() { return m_Weight; }
 	static CTime *GetTime()		{ return m_Time; }
 	static CGoalScore *GetGoalScore() { return m_GoalScore; }
+	static bool GetGameEnd() { return m_bGameEnd; }
 
 private:
 
@@ -43,7 +44,7 @@ private:
 	static CGoalScore	*m_GoalScore;
 
 	bool m_bPush;
-	bool m_bGameEnd;
+	static bool m_bGameEnd;
 	float				m_fAlpha;
 	bool				m_bNextMode;//二重押し防止変数
 	int					m_nTimer;//カウンター

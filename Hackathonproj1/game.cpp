@@ -38,6 +38,7 @@ static float s_texrotx = 0.0f;
 static float s_texseax = 0.0f;
 static int s_nTime = 0;
 static bool s_bTime = false;
+bool CGame::m_bGameEnd = false;
 
 //--------------------------------------------
 //コンストラクタ

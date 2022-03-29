@@ -27,6 +27,7 @@ public:
 		Number,			// 番号
 		Bag,			// 袋
 		GameBg,			//ゲームの背景
+		ResultBg,		//リザルトの背景
 		Balance,		//秤
 		Fade,			//フェード
 		TitleLogo,		// タイトルロゴ

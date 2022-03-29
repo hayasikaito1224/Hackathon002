@@ -46,7 +46,7 @@ CResult::~CResult()
 HRESULT CResult::Init(void)
 {
 	m_bNextMode = false;
-	//m_pBg = CBg::Create(CTexture::GameClear000, CScene::OBJTYPE_BG, false);	//背景
+	m_pBg = CBg::Create(CTexture::ResultBg, CScene::OBJTYPE_BG, false);	//背景
 	//pPolygon[1] = CPolygon::Create(D3DXVECTOR3(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 + 80.0f, 0.0f), D3DXVECTOR3(200, 40.0f, 0.0f), CTexture::Retry);	//リトライ
 	//pPolygon[2] = CPolygon::Create(D3DXVECTOR3(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 + 200.0f, 0.0f), D3DXVECTOR3(200, 40.0f, 0.0f), CTexture::TitleBack001);	//タイトルに戻る
 	//m_Cursol = CPolygon::Create(D3DXVECTOR3(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 + 200.0f, 0.0f), D3DXVECTOR3(50.0f, 50.0f, 0.0f), CTexture::Cursol);	//タイトルに戻る
@@ -55,19 +55,19 @@ HRESULT CResult::Init(void)
 
 	if (!m_pScore)
 	{
-		m_pScore = CScore::Create(D3DXVECTOR3(SCREEN_WIDTH / 2 - 100.0f, 125.0f, 0.0f), D3DXVECTOR3(25.0f, 45.0f, 0.0f));
+		m_pScore = CScore::Create(D3DXVECTOR3(SCREEN_WIDTH / 2 - 400.0f, 600, 0.0f), D3DXVECTOR3(25.0f, 45.0f, 0.0f));
 	}
 	
 	//秤用数字の生成
 	if (!m_Weight)
 	{
-		m_Weight = CWeight::Create(D3DXVECTOR3(200.0f, 50.0f, 0.0f), D3DXVECTOR3(25.0f, 45.0f, 0.0f));
+		m_Weight = CWeight::Create(D3DXVECTOR3(450.0f, 150.0f, 0.0f), D3DXVECTOR3(25.0f, 45.0f, 0.0f));
 	}
 
 	//目標重量用数字の生成
 	if (!m_GoalScore)
 	{
-		m_GoalScore = CGoalScore::Create(D3DXVECTOR3(200.0f, 150.0f, 0.0f), D3DXVECTOR3(25.0f, 45.0f, 0.0f));
+		m_GoalScore = CGoalScore::Create(D3DXVECTOR3(450.0f, 325, 0.0f), D3DXVECTOR3(25.0f, 45.0f, 0.0f));
 	}
 
 	//目標重量用数字の生成

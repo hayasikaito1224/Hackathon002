@@ -10,7 +10,7 @@
 #include "keyboard.h"
 #include "data.h"
 #include "sound.h"
-
+#include "game.h"
 //=============================================================================
 // コンストラクタ
 //=============================================================================
@@ -63,12 +63,14 @@ void CWeight::Update(void)
 
 	if (CManager::GetData()->GetNowGame())
 	{
-		if (CManager::GetInputKeyboard()->GetTrigger(DIK_SPACE))
+		bool bEndGame = CManager::GetGame()->GetGameEnd();
+
+		if (CManager::GetInputKeyboard()->GetTrigger(DIK_SPACE)&& bEndGame == false)
 		{
 			CManager::GetSound()->PlaySoundA(CSound::SOUND_LABEL_SE_POUR);
 		}
 
-		if (CManager::GetInputKeyboard()->GetPress(DIK_SPACE))
+		if (CManager::GetInputKeyboard()->GetPress(DIK_SPACE) && bEndGame == false)
 		{
 
 

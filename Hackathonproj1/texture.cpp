@@ -109,6 +109,10 @@ void CTexture::Init(void)
 		"data/TEXTURE/Signboard.png",//ŠÅ”Â
 		&m_pTexture[SignBoard]);
 
+	D3DXCreateTextureFromFile(pDevice,
+		"data/TEXTURE/ResultBG.jpg",//ƒŠƒUƒ‹ƒg‚Ì”wŒi
+		&m_pTexture[ResultBg]);
+
 }
 
 //=============================================================================

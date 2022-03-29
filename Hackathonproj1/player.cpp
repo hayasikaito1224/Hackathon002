@@ -97,8 +97,8 @@ void CPlayer::Incline()
 	CInputKeyBoard *pKeyBoard = CManager::GetInputKeyboard();
 
 	CWeight *pWeight = CManager::GetGame()->GetWeight();
-
-	if (pKeyBoard->GetPress(DIK_SPACE) == true)
+	bool bEndGame = CManager::GetGame()->GetGameEnd();
+	if (pKeyBoard->GetPress(DIK_SPACE) == true&& bEndGame==false)
 	{
 		AddState(m_fMoveAngle);
 
