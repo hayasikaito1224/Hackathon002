@@ -19,6 +19,9 @@
     <Filter Include="ソース ファイル\Data">
       <UniqueIdentifier>{a71d2f79-fc88-4083-864b-e021ec3d6aa6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Hide">
+      <UniqueIdentifier>{91a60dc4-a50c-405c-9859-b1349c131e90}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="directinput.h">
@@ -111,6 +114,9 @@
     <ClInclude Include="goalscore.h">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="hide.h">
+      <Filter>ソース ファイル\Hide</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="fade.cpp">
@@ -202,6 +208,9 @@
     </ClCompile>
     <ClCompile Include="goalscore.cpp">
       <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="hide.cpp">
+      <Filter>ソース ファイル\Hide</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -81,23 +81,11 @@ void CTime::Update(void)
 		m_nTime = MAX_TIME;
 	}
 
-	if (m_nTime <= 8)
+	if (m_nTime <= 0)
 	{
 		m_nTime = 0;
-
-		if (m_bNextMode == false)
-		{
-			//CManager::GetSound()->PlaySoundA(CSound::SOUND_LABEL_SE_ENTER);
-			//CManager::GetSound()->ControllVoice(CSound::SOUND_LABEL_SE_ENTER, 0.6f);
-
-			pData->SetScore(abs(abs(pData->GetTargetScore()) - abs(CManager::GetGame()->GetPlayer()->GetSandRemaining() * 10.0f)));
-
-			//リザルトモードへ行く
-			CFade::SetFade(CManager::MODE_RESULT);
-
-			//二回以上通らないようにする
-			m_bNextMode = true;
-		}
+		//スコアをセット
+		pData->SetScore(abs(abs(pData->GetTargetScore()) - abs(CManager::GetGame()->GetPlayer()->GetSandRemaining() * 10.0f)));
 	}
 
 	for (int nCnt = 0; nCnt < TIME_DIGITS; nCnt++)
