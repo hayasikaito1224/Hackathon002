@@ -1,6 +1,52 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+﻿  player.cpp
+c:\users\student\desktop\gitゲームフォルダ\hackathon002\hackathonproj1\player.cpp(104): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  Hackathonproj1.vcxproj -> C:\Users\student\Desktop\Gitゲームフォルダ\Hackathon002\Hackathonproj1\Debug\Hackathonproj1.exe
+  Hackathonproj1.vcxproj -> C:\Users\student\Desktop\Gitゲームフォルダ\Hackathon002\Hackathonproj1\Debug\Hackathonproj1.pdb (Full PDB)
+=======
+﻿  game.cpp
+  Hackathonproj1.vcxproj -> C:\Users\student\Desktop\Hackathon002\Hackathonproj1\Debug\Hackathonproj1.exe
+  Hackathonproj1.vcxproj -> C:\Users\student\Desktop\Hackathon002\Hackathonproj1\Debug\Hackathonproj1.pdb (Full PDB)
+>>>>>>> 4ebaff857e972e484031c806322ad377b3d7a127
+=======
+<<<<<<< HEAD
+>>>>>>> 6dbe3de064c2bdf49ff160607d3491d8b1c5c6bc
 ﻿  effect.cpp
   LoadEffect.cpp
 c:\users\student\desktop\git\hackathon002\hackathonproj1\loadeffect.cpp(165): warning C4800: 'int': ブール値を 'true' または 'false' に強制的に設定します (警告の処理)
   コードを生成中...
+<<<<<<< HEAD
   Hackathonproj1.vcxproj -> C:\Users\student\Desktop\git\Hackathon002\Hackathonproj1\Debug\Hackathonproj1.exe
   Hackathonproj1.vcxproj -> C:\Users\student\Desktop\git\Hackathon002\Hackathonproj1\Debug\Hackathonproj1.pdb (Full PDB)
+=======
+  コンパイル中...
+  keyboard.cpp
+  input.cpp
+  game.cpp
+  fade.cpp
+  effect.cpp
+  directinput.cpp
+  bg.cpp
+  コードを生成中...
+<<<<<<< HEAD
+  LINK : 前回のインクリメンタル リンクで C:\Users\student\Desktop\Hackathon002\Hackathonproj1\Debug\Hackathonproj1.exe が見つからなかったか、ビルドされませんでした。フル リンクを行います。
+  Hackathonproj1.vcxproj -> C:\Users\student\Desktop\Hackathon002\Hackathonproj1\Debug\Hackathonproj1.exe
+  Hackathonproj1.vcxproj -> C:\Users\student\Desktop\Hackathon002\Hackathonproj1\Debug\Hackathonproj1.pdb (Full PDB)
+=======
+=======
+<<<<<<< HEAD
+﻿
+=======
+﻿  weight.cpp
+cl : コマンド ライン warning D9028: 簡易リビルド時のエラーです、通常のビルドに戻します
+>>>>>>> 24b30a4d55c675a361c6912a62ec89b71acd3dde
+  Hackathonproj1.vcxproj -> C:\Users\student\Desktop\Gitゲームフォルダ\Hackathon002\Hackathonproj1\Debug\Hackathonproj1.exe
+  Hackathonproj1.vcxproj -> C:\Users\student\Desktop\Gitゲームフォルダ\Hackathon002\Hackathonproj1\Debug\Hackathonproj1.pdb (Full PDB)
+>>>>>>> a2b217ef4016af4f933b5dcb7f84351dcbbb942f
+>>>>>>> c22998213475fa625feb99ba3e995992936708d2
+>>>>>>> 4f003cd582dcbd6f7431c90d385acad1289bc753
+>>>>>>> 67577fbc9be71ca3b64adcba33a82070c32b98f4
+>>>>>>> 6dbe3de064c2bdf49ff160607d3491d8b1c5c6bc

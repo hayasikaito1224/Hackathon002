@@ -1,11 +1,11 @@
 //=============================================================================
 //
-// 砂の重量 [weight.h]
+// 残り時間 [time.h]
 // Author : 三橋錬
 //
 //=============================================================================
-#ifndef _WEIGHT_H_
-#define _WEIGHT_H_
+#ifndef _TIME_H_
+#define _TIME_H_
 
 //*****************************************************************************
 // ヘッダファイルのインクルード
@@ -16,33 +16,34 @@
 //*****************************************************************************
 // マクロ定義
 //*****************************************************************************
-#define WEIGHT_DIGITS (4)				// 桁数
-#define MAX_WEIGHT (9999)
+#define TIME_DIGITS (2)				// 桁数
+#define MAX_TIME (99)
 
 //*****************************************************************************
 // クラス定義
 //*****************************************************************************
-class CWeight : public CScene
+class CTime : public CScene
 {
 public:
-	CWeight(OBJTYPE nPriority = CScene::OBJTYPE_UI);
-	~CWeight();
+	CTime(OBJTYPE nPriority = CScene::OBJTYPE_UI);
+	~CTime();
 
 	HRESULT Init(void);
 	void Uninit(void);
 	void Update(void);
 	void Draw(void);
 
-	static CWeight *Create(D3DXVECTOR3 pos, D3DXVECTOR3 size);
+	static CTime *Create(D3DXVECTOR3 pos, D3DXVECTOR3 size);
 
-	void SetWeight(int nWeight);
-	int GetWeight() { return m_nWeight; }
+	void SetTime(int nTime);
+	int GetTimet() { return m_nTime; }
 
 private:
 	void Set(D3DXVECTOR3 pos, D3DXVECTOR3 size);
 
-	CNumber							*m_apNumber[WEIGHT_DIGITS];
-	int								m_nWeight;
+	CNumber							*m_apNumber[TIME_DIGITS];
+	int								m_nTime;
+	int								m_nCommaTime;	// 0.1秒
 
 	D3DXVECTOR3						m_pos;
 	D3DXVECTOR3						m_size;

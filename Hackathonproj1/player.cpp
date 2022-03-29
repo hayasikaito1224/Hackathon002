@@ -19,8 +19,8 @@
 //------------------------------------
 #define PLAYER_POS_X (SCREEN_WIDTH/2.0f)
 #define PLAYER_POS_Y (SCREEN_HEIGHT/2.0f)
-#define PLAYER_SCALE_X (70.0)
-#define PLAYER_SCALE_Y (70.0)
+#define PLAYER_SCALE_X (140.0)
+#define PLAYER_SCALE_Y (140.0)
 #define PLAYER_ANGLE_MAX (40.0)//傾きの最大値
 
 //--------------------------
@@ -29,6 +29,7 @@
 CPlayer::CPlayer(OBJTYPE nPriority) : CScene(nPriority)
 {
 	m_pPlayer = nullptr;
+	m_fSandRemaining = 500.0f;
 }
 //--------------------------
 //デストラクト
@@ -98,9 +99,9 @@ void CPlayer::Incline()
 		DefState(m_fMoveAngle);
 	}
 	//砂を減らす
-	m_fSandRemaining -= m_fMoveAngle / 100;
+	m_fSandRemaining -= abs(m_fMoveAngle) / 100;
 	CWeight *pWeight = CManager::GetGame()->GetWeight();
-	pWeight->SetWeight(m_fSandRemaining*10);
+	pWeight->SetWeight(m_fSandRemaining * 10);
 
 	m_pPlayer->SetAngle(D3DXToRadian(m_fMoveAngle));
 	m_pPlayer->Rotate({ PLAYER_POS_X ,PLAYER_POS_Y,0.0f }, { PLAYER_SCALE_X ,PLAYER_SCALE_Y ,0.0f });
