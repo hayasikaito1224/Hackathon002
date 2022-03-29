@@ -8,7 +8,7 @@
 //*****************************************************************************
 //コンストラクタ
 //*****************************************************************************
-CMovement::CMovement(int nPriority) : CEffect(nPriority)
+CMovement::CMovement(OBJTYPE nPriority) : CEffect(nPriority)
 {
 	m_move = {};
 	m_Addpos = {};
@@ -81,7 +81,8 @@ void CMovement::Draw()
 CMovement *CMovement::Create(D3DXVECTOR3 pos, D3DXVECTOR3 move, D3DCOLORVALUE color, D3DCOLORVALUE Mincolor, D3DXVECTOR2 Size, D3DXVECTOR2 MinSize, int nLife, int nType, D3DXVECTOR3 AddMovement)
 {
 	CMovement *pMovement = NULL;
-	pMovement = new CMovement(3);		//メモリ確保
+	pMovement = new CMovement(CScene::OBJTYPE_EFFECT);		//メモリ確保
+
 	//NULLチェック
 	if (pMovement != NULL)
 	{

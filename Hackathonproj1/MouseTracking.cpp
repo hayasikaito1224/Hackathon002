@@ -108,7 +108,7 @@ CMouseTracking *CMouseTracking::Create(D3DXVECTOR3 pos,
 	int UninitVectl)
 {
 	CMouseTracking *pMouseTracking = NULL;
-	pMouseTracking = new CMouseTracking(3);		//メモリ確保
+	pMouseTracking = new CMouseTracking(CScene::OBJTYPE_EFFECT);		//メモリ確保
 										//NULLチェック
 	if (pMouseTracking != NULL)
 	{

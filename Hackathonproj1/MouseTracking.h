@@ -10,7 +10,7 @@
 class CMouseTracking : public CEffect
 {
 public:
-	CMouseTracking(int nPriority);
+	CMouseTracking(OBJTYPE nPlyorty = CScene::OBJTYPE_EFFECT);
 	~CMouseTracking();
 
 	HRESULT Init(D3DXVECTOR3 pos, D3DXVECTOR3 move, D3DCOLORVALUE color, D3DCOLORVALUE Mincolor, D3DXVECTOR2 Size, D3DXVECTOR2 MinSize, int nLife, int nType, D3DXVECTOR3 Endpos, int Diffusion, int UninitVectl);
