@@ -7,7 +7,7 @@
 #include "score.h"
 #include "manager.h"
 #include "renderer.h"
-
+#include "data.h"
 //=============================================================================
 // コンストラクタ
 //=============================================================================
@@ -41,6 +41,7 @@ HRESULT CScore::Init(void)
 //=============================================================================
 void CScore::Uninit(void)
 {
+	CManager::GetData()->SetScore(m_nScore);
 	for (int nCnt = 0; nCnt < SCORE_DIGITS; nCnt++)
 	{
 		if (m_apNumber[nCnt] != NULL)
@@ -49,6 +50,7 @@ void CScore::Uninit(void)
 			m_apNumber[nCnt] = NULL;
 		}
 	}
+	Release();
 }
 
 //=============================================================================
