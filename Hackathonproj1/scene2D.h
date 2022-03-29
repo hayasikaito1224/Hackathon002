@@ -46,6 +46,11 @@ public:
 	void Rotate();//ポリゴンの回転処理
 	void Rotate(D3DXVECTOR3 pos, D3DXVECTOR3 scale);//ポリゴンの回転処理
 	void SetAngle(float fAngle) { m_fAngle = fAngle; }
+	D3DXVECTOR3 GetRotatePos(int nVtx) { return m_rotatePos[nVtx]; }
+
+	//エフェクト
+	void SetEffect(D3DXVECTOR3 pos) { m_EffectPos = pos; }
+	D3DXVECTOR3 GetEffect() { return m_EffectPos; }
 private:
 
 protected:
@@ -55,6 +60,11 @@ protected:
 	bool m_bUse;
 	CTexture::Type			m_TexType;//テクスチャのタイプ
 	D3DXVECTOR3 m_pos;
+	D3DXVECTOR3 m_rotatePos[4];//回転する頂点の情報
+
+	//エフェクト
+	D3DXVECTOR3 m_EffectPos;	//エフェクトの発生地点
+
 	D3DXVECTOR3 m_scale;
 	D3DXCOLOR m_col;
 	float m_fAngle;//角度

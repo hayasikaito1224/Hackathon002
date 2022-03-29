@@ -16,6 +16,9 @@
     <Filter Include="ソース ファイル\Effect">
       <UniqueIdentifier>{992b4343-7962-4398-80c0-aad0832696dc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Data">
+      <UniqueIdentifier>{a71d2f79-fc88-4083-864b-e021ec3d6aa6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="directinput.h">
@@ -102,6 +105,9 @@
     <ClInclude Include="time.h">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="data.h">
+      <Filter>ソース ファイル\Data</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="fade.cpp">
@@ -187,6 +193,9 @@
     </ClCompile>
     <ClCompile Include="time.cpp">
       <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="data.cpp">
+      <Filter>ソース ファイル\Data</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

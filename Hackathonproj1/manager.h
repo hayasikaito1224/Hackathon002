@@ -19,6 +19,7 @@ class CDirectInput;
 class CMouse;
 class CSound;
 class CPause;
+class CData;
 
 class CManager
 {
@@ -51,6 +52,7 @@ public:
 	}
 	static void SetEnd(bool bEnd)							{ m_bEnd = bEnd;}
 	static CXInput *GetXInput(void)							{ return m_XInput; }
+	static CData *GetData(void) { return m_pData; }
 	static CMouse *GetMouse(void)							{ return m_Mouse; }
 	static CSound *GetSound(void)							{ return m_pSound; }
 	static CDirectInput *GetDirectInput(void)				{ return m_pDirectInput; }
@@ -74,6 +76,7 @@ private:
 	static CDirectInput		*m_pDirectInput;
 	static CSound			*m_pSound;
 	static CPause			*m_pPause;
+	static CData			*m_pData;
 	static bool	m_bClear;					//ƒNƒŠƒA‚µ‚½‚©‚Ì”»’è
 };
 

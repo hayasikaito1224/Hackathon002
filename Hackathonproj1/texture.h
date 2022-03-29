@@ -30,8 +30,12 @@ public:
 		Balance,		//秤
 		Fade,			//フェード
 		TitleLogo,		// タイトルロゴ
+<<<<<<< HEAD
 		TitleEnter,		// タイトル文字
 		TitleBG,		// タイトル背景
+=======
+		Effect,			//エフェクト（粒）
+>>>>>>> 3d6e3a7eee0d8aa73766c62a0a55442f566416a4
 		Max,			// テクスチャの最大数
 	} Type;
 
