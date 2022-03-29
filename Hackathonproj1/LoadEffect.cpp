@@ -42,6 +42,7 @@ void CLoadEffect::EffectStateLoad(const char *aFileName)
 	int Destroyvec = 0;
 	float fSize = 0;
 	float fAddSize = 0;
+	float fRotate = 0;
 	D3DCOLORVALUE col;
 	D3DCOLORVALUE ChangeColor;
 	int nLife = 0;
@@ -70,6 +71,11 @@ void CLoadEffect::EffectStateLoad(const char *aFileName)
 				{
 					fscanf(pFile, "%s", &aFile[0]);
 					fscanf(pFile, "%f %f %f", &pos.x, &pos.y, &pos.z);
+				}
+				if (strcmp(&aFile[0], "ROTATE") == 0)	//‰ñ“]
+				{
+					fscanf(pFile, "%s", &aFile[0]);
+					fscanf(pFile, "%f", &fRotate);
 				}
 				if (strcmp(&aFile[0], "MOVE") == 0)	//ˆÚ“®—Ê
 				{
@@ -161,7 +167,7 @@ void CLoadEffect::EffectStateLoad(const char *aFileName)
 			if (strcmp(&aFile[0], "END_EFFECTSTATE2D") == 0)
 			{
 				bEffectState2D = false;
-				CSetEffect::SetEffectState2D(nPattern,pos, move, Addmove, Diffusion, Destroyvec, fSize, fAddSize, col, ChangeColor, nLife, Density,
+				CSetEffect::SetEffectState2D(nPattern,pos,fRotate, move, Addmove, Diffusion, Destroyvec, fSize, fAddSize, col, ChangeColor, nLife, Density,
 					bRandColR, bRandColG, bRandColB, bMoveRandX, bMoveRandY, bMousePos);
 			}
 

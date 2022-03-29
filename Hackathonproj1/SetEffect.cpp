@@ -9,6 +9,7 @@
 
 #include "MouseTracking.h"
 #include "Movement.h"
+#include "Rotate.h"
 #include <assert.h>
 
 //*****************************************************************************
@@ -46,6 +47,7 @@ CSetEffect::~CSetEffect()
 //=============================================================================
 void CSetEffect::SetEffectState2D(int nPattern,
 	D3DXVECTOR3 pos,
+	float fRotate,
 	D3DXVECTOR3 move,
 	D3DXVECTOR3 Addmove,
 	int Diffusion,
@@ -65,6 +67,7 @@ void CSetEffect::SetEffectState2D(int nPattern,
 {
 	m_EffectState2D[m_nEffectPattern].m_nPattern = nPattern;
 	m_EffectState2D[m_nEffectPattern].m_pos = pos;
+	m_EffectState2D[m_nEffectPattern].m_fRotate = fRotate;
 	m_EffectState2D[m_nEffectPattern].m_move = move;
 	m_EffectState2D[m_nEffectPattern].m_Addmove = Addmove;
 	m_EffectState2D[m_nEffectPattern].m_nDiffusion = Diffusion;
@@ -146,7 +149,7 @@ void CSetEffect::SetEffect(int nPattern, D3DXVECTOR3 pos, D3DXVECTOR3 Endpos)
 			{
 				m_EffectState2D[nPattern].m_pos = pos;
 			}
-			//各色のランダム化4
+			//各色のランダム化
 			if (m_EffectState2D[nPattern].m_bColorRandR == true)
 			{
 				m_EffectState2D[nPattern].m_Col.r = RAND_COLOR;
@@ -175,6 +178,44 @@ void CSetEffect::SetEffect(int nPattern, D3DXVECTOR3 pos, D3DXVECTOR3 Endpos)
 				Endpos, m_EffectState2D[nPattern].m_nDiffusion,
 				m_EffectState2D[nPattern].m_nDestroyvec);
 		}
+		break;
+	case(3):
+		//各色のランダム化
+		if (m_EffectState2D[nPattern].m_bColorRandR == true)
+		{
+			m_EffectState2D[nPattern].m_Col.r = RAND_COLOR;
+		}
+		if (m_EffectState2D[nPattern].m_bColorRandG == true)
+		{
+			m_EffectState2D[nPattern].m_Col.g = RAND_COLOR;
+		}
+		if (m_EffectState2D[nPattern].m_bColorRandB == true)
+		{
+			m_EffectState2D[nPattern].m_Col.b = RAND_COLOR;
+		}
+		//移動値のランダム
+		if (m_EffectState2D[nPattern].m_bMoveRandX == true)
+		{
+			float f = RAND_MOVE * -1;
+
+			m_EffectState2D[nPattern].m_move.x = f;
+		}
+		//移動値のランダム
+		if (m_EffectState2D[nPattern].m_bMoveRandY == true)
+		{
+			m_EffectState2D[nPattern].m_move.y = RAND_MOVEMIN;
+		}
+
+		CRotate::Create(pos,
+			m_EffectState2D[nPattern].m_move,
+			m_EffectState2D[nPattern].m_Col,
+			m_EffectState2D[nPattern].m_Changecolor,
+			D3DXVECTOR2(m_EffectState2D[nPattern].m_fSize, m_EffectState2D[nPattern].m_fSize),
+			D3DXVECTOR2(m_EffectState2D[nPattern].m_fAddSize, m_EffectState2D[nPattern].m_fAddSize),
+			m_EffectState2D[nPattern].m_nLife,
+			9,
+			m_EffectState2D[nPattern].m_fRotate);
+
 		break;
 	default:
 		assert(false);
