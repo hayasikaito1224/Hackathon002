@@ -14,9 +14,9 @@
 //*****************************************************************************
 // マクロ
 //***************************************************************************** 
-#define RAND_MOVE ((float(rand() % 100) + 1))//ランダム移動値
+#define RAND_MOVE ((float(rand() % 300) + 100) / 100)//ランダム移動値
 #define RAND_MOVEMIN ((float(rand() % 1)) - (float(rand() % 10)))//ランダム移動値
-#define RAND_COLOR (float(rand()% 255) + 5)		//ランダムカラー
+#define RAND_COLOR ((float(rand()% 10) + 1) / 10)		//ランダムカラー
 
 
 //*****************************************************************************
@@ -112,7 +112,9 @@ void CSetEffect::SetEffect(int nPattern, D3DXVECTOR3 pos, D3DXVECTOR3 Endpos)
 			//移動値のランダム
 			if (m_EffectState2D[nPattern].m_bMoveRandX == true)
 			{
-				m_EffectState2D[nPattern].m_move.x = RAND_MOVEMIN;
+				float f = RAND_MOVE * -1;
+
+				m_EffectState2D[nPattern].m_move.x = f;
 			}
 			//移動値のランダム
 			if (m_EffectState2D[nPattern].m_bMoveRandY == true)

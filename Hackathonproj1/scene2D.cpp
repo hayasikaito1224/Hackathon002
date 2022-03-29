@@ -372,6 +372,7 @@ void CScene2D::Rotate(D3DXVECTOR3 pos, D3DXVECTOR3 scale)
 
 	m_pVtxBuff->Unlock();
 
-	SetEffect(pVtx[0].pos);
+	//エフェクト出現位置
+	SetEffect(D3DXVECTOR3(pVtx[0].pos.x + 20, pVtx[0].pos.y + 10, {}));
 
 }

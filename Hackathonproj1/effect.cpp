@@ -66,7 +66,7 @@ void CEffect::Update()
 
 	//サイズ変更
 	CScene2D::SetPos(pos, D3DXVECTOR3(m_Size.x, m_Size.y, {}));	//選択した番号のテクスチャを貼る
-	m_nLife--;		//ライフ減算
+	//m_nLife--;		//ライフ減算
 
 	//画面外処理
 	if (pos.y < 0)

@@ -90,16 +90,22 @@ void CPlayer::Draw()
 //-------------------------------------------
 void CPlayer::Incline()
 {
-
-	D3DXVECTOR3 aa;
 	//スペースを押したら
 	CInputKeyBoard *pKeyBoard = CManager::GetInputKeyboard();
+
+	CWeight *pWeight = CManager::GetGame()->GetWeight();
+
 	if (pKeyBoard->GetPress(DIK_SPACE) == true)
 	{
 		AddState(m_fMoveAngle);
-		CSetEffect::SetEffect(0, m_pPlayer->GetEffect(), {});
 
-		aa = m_pPlayer->GetRotatePos(0);
+		if (pWeight->GetWeight() > 0)	//0以下で発生しない
+		{
+			//エフェクトの発生
+			CSetEffect::SetEffect(0, m_pPlayer->GetEffect(), {});	//黄色粒
+			CSetEffect::SetEffect(1, m_pPlayer->GetEffect(), {});	//白粒(小)
+			CSetEffect::SetEffect(2, m_pPlayer->GetEffect(), {});	//白粒(大)
+		}
 
 	}
 	else
@@ -108,7 +114,6 @@ void CPlayer::Incline()
 	}
 	//砂を減らす
 	m_fSandRemaining -= abs(m_fMoveAngle) / 100;
-	CWeight *pWeight = CManager::GetGame()->GetWeight();
 	pWeight->SetWeight(m_fSandRemaining * 10);
 
 	m_pPlayer->SetAngle(D3DXToRadian(m_fMoveAngle));
