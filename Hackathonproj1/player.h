@@ -29,7 +29,6 @@ private:
 	float m_fMoveAngle;//ŒX‚«‚ÌŠp“x
 	float m_fSandRemaining;//»‚Ìc—Ê
 
-
 };
 
 
