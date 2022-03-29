@@ -58,7 +58,7 @@ void CScore::Uninit(void)
 //=============================================================================
 void CScore::Update(void)
 {
-	m_nScore = 520;
+	m_nScore = CManager::GetData()->GetScore();
 
 	if (m_nScore > MAX_SCORE)
 	{

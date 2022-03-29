@@ -9,6 +9,9 @@
 #include "renderer.h"
 #include "keyboard.h"
 #include "data.h"
+#include "fade.h"
+#include "game.h"
+#include "player.h"
 
 //=============================================================================
 // コンストラクタ
@@ -18,6 +21,7 @@ CTime::CTime(OBJTYPE nPriority) : CScene(nPriority)
 	for (int nCnt = 0; nCnt < TIME_DIGITS; nCnt++)	m_apNumber[nCnt] = 0;
 	m_nTime = 10;
 	m_nCommaTime = 0;
+	m_bNextMode = false;
 }
 
 //=============================================================================
@@ -60,6 +64,7 @@ void CTime::Uninit(void)
 //=============================================================================
 void CTime::Update(void)
 {
+	CData *pData = CManager::GetData();
 	if (CManager::GetData()->GetNowGame())
 	{
 		m_nCommaTime++;
@@ -76,9 +81,23 @@ void CTime::Update(void)
 		m_nTime = MAX_TIME;
 	}
 
-	if (m_nTime < 0)
+	if (m_nTime <= 8)
 	{
 		m_nTime = 0;
+
+		if (m_bNextMode == false)
+		{
+			//CManager::GetSound()->PlaySoundA(CSound::SOUND_LABEL_SE_ENTER);
+			//CManager::GetSound()->ControllVoice(CSound::SOUND_LABEL_SE_ENTER, 0.6f);
+
+			pData->SetScore(abs(abs(pData->GetTargetScore()) - abs(CManager::GetGame()->GetPlayer()->GetSandRemaining() * 10.0f)));
+
+			//リザルトモードへ行く
+			CFade::SetFade(CManager::MODE_RESULT);
+
+			//二回以上通らないようにする
+			m_bNextMode = true;
+		}
 	}
 
 	for (int nCnt = 0; nCnt < TIME_DIGITS; nCnt++)
