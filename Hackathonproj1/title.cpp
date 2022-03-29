@@ -16,7 +16,7 @@
 //--------------------------------------------
 CTitle::CTitle()
 {
-	m_Polygon = nullptr;
+	memset(&m_Polygon, NULL, sizeof(m_Polygon));
 	m_bOpra = false;
 }
 //--------------------------------------------
@@ -33,9 +33,14 @@ CTitle::~CTitle()
 HRESULT CTitle::Init(void)
 {
 	m_bNextMode = false;
-	//CBg::Create(CTexture::Title, CScene::OBJTYPE_BG, false);	//背景
+	m_nCount = 0;
+	m_bAlpha = false;
+	m_nAlpha = 255;
+	CBg::Create(CTexture::TitleBG, CScene::OBJTYPE_BG, false);	//背景
 	
-	m_Polygon = CPolygon::Create(D3DXVECTOR3(SCREEN_WIDTH/2.0f, SCREEN_HEIGHT / 2 - 100.0f, 0.0f), D3DXVECTOR3(350.0f, 200.0f, 0.0f), CTexture::TitleLogo);	//タイトルロゴ
+	m_Polygon[0] = CPolygon::Create(D3DXVECTOR3(SCREEN_WIDTH/2.0f, SCREEN_HEIGHT / 2 - 100.0f, 0.0f), D3DXVECTOR3(350.0f, 200.0f, 0.0f), CTexture::TitleLogo);	//タイトルロゴ
+	
+	m_Polygon[1] = CPolygon::Create(D3DXVECTOR3(SCREEN_WIDTH/2.0f, SCREEN_HEIGHT / 2 + 200.0f, 0.0f), D3DXVECTOR3(280.0f, 50.0f, 0.0f), CTexture::TitleEnter);	//タイトルロゴ
 	return S_OK;
 }
 //--------------------------------------------
@@ -43,10 +48,13 @@ HRESULT CTitle::Init(void)
 //--------------------------------------------
 void CTitle::Uninit(void)
 {
-	if (m_Polygon != NULL)
+	for (int nCntPolygon = 0; nCntPolygon < 2; nCntPolygon++)
 	{
-		m_Polygon->Uninit();
-		m_Polygon= NULL;
+		if (m_Polygon[nCntPolygon] != NULL)
+		{
+			m_Polygon[nCntPolygon]->Uninit();
+			m_Polygon[nCntPolygon] = NULL;
+		}
 	}
 
 	CManager::GetSound()->StopSound(CSound::SOUND_LABEL_BGM_TITLE);
@@ -78,6 +86,46 @@ void CTitle::Update(void)
 			m_bNextMode = true;
 
 		}
+	}
+
+	// カウントを増やす
+	m_nCount++;
+
+	// アルファ値を下げる(透明にする)
+	if (m_bAlpha == false)
+	{
+		if (m_nCount % 2 == 0)
+		{
+			m_nAlpha -= 15;
+		}
+
+		// アルファ値が0以下なら値を固定する
+		if (m_nAlpha <= 0)
+		{
+			m_nCount = 0;
+			m_nAlpha = 0;
+			m_bAlpha = true;
+		}
+	}
+	// アルファ値を上げる(不透明にする)
+	else if (m_bAlpha == true)
+	{
+		if (m_nCount % 2 == 0)
+		{
+			m_nAlpha += 15;
+		}
+
+		if (m_nAlpha >= 255)
+		{
+			m_nCount = 0;
+			m_nAlpha = 255;
+			m_bAlpha = false;
+		}
+	}
+
+	if (m_Polygon[1] != NULL)
+	{
+		m_Polygon[1]->SetCol(D3DCOLOR_RGBA(255, 255, 255, m_nAlpha));
 	}
 }
 //--------------------------------------------

@@ -28,10 +28,13 @@ public:
 	void NextMode(bool bNextMode) { m_bNextMode = bNextMode; }
 
 private:
-	CPolygon			*m_Polygon;
+	CPolygon			*m_Polygon[2];
 	int					m_nSelectType;//選択したタイプ
+	int					m_nCount;//文字点滅用のカウント
+	int					m_nAlpha;//文字のアルファ値
 	bool				m_bNextMode;//次のモードに行くための
 	bool				m_bOpra;//チュートリアルUIを選択しているか
+	bool				m_bAlpha;//文字のアルファ値を上げるか下げるか
 };
 
 
