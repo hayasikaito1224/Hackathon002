@@ -1,1 +1,8 @@
+<<<<<<< HEAD
 ﻿
+=======
+﻿  weight.cpp
+cl : コマンド ライン warning D9028: 簡易リビルド時のエラーです、通常のビルドに戻します
+  Hackathonproj1.vcxproj -> C:\Users\student\Desktop\Gitゲームフォルダ\Hackathon002\Hackathonproj1\Debug\Hackathonproj1.exe
+  Hackathonproj1.vcxproj -> C:\Users\student\Desktop\Gitゲームフォルダ\Hackathon002\Hackathonproj1\Debug\Hackathonproj1.pdb (Full PDB)
+>>>>>>> a2b217ef4016af4f933b5dcb7f84351dcbbb942f
