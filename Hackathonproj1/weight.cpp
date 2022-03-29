@@ -58,6 +58,8 @@ void CWeight::Uninit(void)
 //=============================================================================
 void CWeight::Update(void)
 {
+	m_nWeight = int(CManager::GetData()->GetSandRemaining() * 10.0f);
+
 	if (CManager::GetData()->GetNowGame())
 	{
 		if (CManager::GetInputKeyboard()->GetPress(DIK_SPACE))

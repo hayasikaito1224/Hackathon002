@@ -10,8 +10,18 @@
 #include "Polygon.h"
 #include "XInput.h"
 #include "sound.h"
+#include "score.h"
+#include "weight.h"
+#include "goalscore.h"
+#include "rank.h"
 #include "directinput.h"
+
 CBg *CResult::m_pBg = NULL;
+CScore *CResult::m_pScore = nullptr;
+CWeight *CResult::m_Weight = nullptr;
+CGoalScore *CResult::m_GoalScore = nullptr;
+//CRank *CResult::m_Rank = nullptr;
+
 //--------------------------------------------
 //コンストラクタ
 //--------------------------------------------
@@ -19,6 +29,10 @@ CResult::CResult()
 {
 	m_bNextMode = false;
 	m_Cursol = NULL;
+	m_pScore = NULL;
+	m_Weight = NULL;
+	m_GoalScore = NULL;
+	//m_Rank = NULL;
 }
 //--------------------------------------------
 //デストラクタ
@@ -37,13 +51,37 @@ HRESULT CResult::Init(void)
 	//pPolygon[2] = CPolygon::Create(D3DXVECTOR3(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 + 200.0f, 0.0f), D3DXVECTOR3(200, 40.0f, 0.0f), CTexture::TitleBack001);	//タイトルに戻る
 	//m_Cursol = CPolygon::Create(D3DXVECTOR3(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 + 200.0f, 0.0f), D3DXVECTOR3(50.0f, 50.0f, 0.0f), CTexture::Cursol);	//タイトルに戻る
 																																							//m_pBg->SetCol(D3DXCOLOR(0.0, 0.0, 1.0, 1.0));
+																																						//秤用数字の生成
+
+	if (!m_pScore)
+	{
+		m_pScore = CScore::Create(D3DXVECTOR3(SCREEN_WIDTH / 2 - 100.0f, 125.0f, 0.0f), D3DXVECTOR3(25.0f, 45.0f, 0.0f));
+	}
+	
+	//秤用数字の生成
+	if (!m_Weight)
+	{
+		m_Weight = CWeight::Create(D3DXVECTOR3(200.0f, 50.0f, 0.0f), D3DXVECTOR3(25.0f, 45.0f, 0.0f));
+	}
+
+	//目標重量用数字の生成
+	if (!m_GoalScore)
+	{
+		m_GoalScore = CGoalScore::Create(D3DXVECTOR3(200.0f, 150.0f, 0.0f), D3DXVECTOR3(25.0f, 45.0f, 0.0f));
+	}
+
+	//目標重量用数字の生成
+	//if (!m_Rank)
+	//{
+	//	m_Rank = CRank::Create(D3DXVECTOR3(500.0f, 250.0f, 0.0f), D3DXVECTOR3(25.0f, 45.0f, 0.0f));
+	//}
 
 	return S_OK;
 }
+
 //--------------------------------------------
 //終了
 //--------------------------------------------
-
 void CResult::Uninit(void)
 {
 	if (m_pBg != NULL)
@@ -59,11 +97,36 @@ void CResult::Uninit(void)
 			pPolygon[nCnt] = NULL;
 		}
 	}
+
+	if (m_pScore != nullptr)
+	{
+		m_pScore->Uninit();
+		m_pScore = nullptr;
+	}
+
 	if (m_Cursol != NULL)
 	{
 		m_Cursol->Uninit();
 		m_Cursol = NULL;
 	}
+
+	if (m_Weight != nullptr)
+	{
+		m_Weight->Uninit();
+		m_Weight = nullptr;
+	}
+
+	if (m_GoalScore != nullptr)
+	{
+		m_GoalScore->Uninit();
+		m_GoalScore = nullptr;
+	}
+
+	//if (m_Rank != nullptr)
+	//{
+	//	m_Rank->Uninit();
+	//	m_Rank = nullptr;
+	//}
 }
 //--------------------------------------------
 //更新

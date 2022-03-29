@@ -408,6 +408,8 @@ void CManager::SetMode(MODE mode)
 	case MODE_TITLE:		//ƒ^ƒCƒgƒ‹‰æ–Ê
 		if (m_pTitle == NULL)
 		{
+			GetData()->ResetData();
+
 			m_bClear = false;
 			m_pTitle = new CTitle;
 			m_pTitle->Init();
