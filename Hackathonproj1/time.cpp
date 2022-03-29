@@ -15,7 +15,7 @@
 CTime::CTime(OBJTYPE nPriority) : CScene(nPriority)
 {
 	for (int nCnt = 0; nCnt < TIME_DIGITS; nCnt++)	m_apNumber[nCnt] = 0;
-	m_nTime = 0;
+	m_nTime = 10;
 	m_nCommaTime = 0;
 }
 
@@ -33,7 +33,7 @@ CTime::~CTime()
 HRESULT CTime::Init(void)
 {
 	for (int nCnt = 0; nCnt < TIME_DIGITS; nCnt++)	m_apNumber[nCnt] = 0;
-	m_nTime = 0;
+	m_nTime = 10;
 	m_nCommaTime = 0;
 
 	return S_OK;
