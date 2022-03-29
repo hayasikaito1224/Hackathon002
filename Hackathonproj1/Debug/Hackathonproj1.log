@@ -1,9 +1,0 @@
-﻿sound.obj : warning LNK4204: 'C:\Users\student\Desktop\Gitゲームフォルダ\Hackathon002\Hackathonproj1\Debug\vc140.pdb' に参照するモジュールのデバッグ情報がありません。デバッグ情報を無視してオブジェクトをリンクします。
-mouse.obj : warning LNK4204: 'C:\Users\student\Desktop\Gitゲームフォルダ\Hackathon002\Hackathonproj1\Debug\vc140.pdb' に参照するモジュールのデバッグ情報がありません。デバッグ情報を無視してオブジェクトをリンクします。
-main.obj : warning LNK4204: 'C:\Users\student\Desktop\Gitゲームフォルダ\Hackathon002\Hackathonproj1\Debug\vc140.pdb' に参照するモジュールのデバッグ情報がありません。デバッグ情報を無視してオブジェクトをリンクします。
-LoadEffect.obj : warning LNK4204: 'C:\Users\student\Desktop\Gitゲームフォルダ\Hackathon002\Hackathonproj1\Debug\vc140.pdb' に参照するモジュールのデバッグ情報がありません。デバッグ情報を無視してオブジェクトをリンクします。
-keyboard.obj : warning LNK4204: 'C:\Users\student\Desktop\Gitゲームフォルダ\Hackathon002\Hackathonproj1\Debug\vc140.pdb' に参照するモジュールのデバッグ情報がありません。デバッグ情報を無視してオブジェクトをリンクします。
-input.obj : warning LNK4204: 'C:\Users\student\Desktop\Gitゲームフォルダ\Hackathon002\Hackathonproj1\Debug\vc140.pdb' に参照するモジュールのデバッグ情報がありません。デバッグ情報を無視してオブジェクトをリンクします。
-directinput.obj : warning LNK4204: 'C:\Users\student\Desktop\Gitゲームフォルダ\Hackathon002\Hackathonproj1\Debug\vc140.pdb' に参照するモジュールのデバッグ情報がありません。デバッグ情報を無視してオブジェクトをリンクします。
-  Hackathonproj1.vcxproj -> C:\Users\student\Desktop\Gitゲームフォルダ\Hackathon002\Hackathonproj1\Debug\Hackathonproj1.exe
-  Hackathonproj1.vcxproj -> C:\Users\student\Desktop\Gitゲームフォルダ\Hackathon002\Hackathonproj1\Debug\Hackathonproj1.pdb (Full PDB)
