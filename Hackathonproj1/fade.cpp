@@ -46,7 +46,7 @@ CFade *CFade::Create(CTexture::Type type, CManager::MODE modeNext)
 //--------------------------------------------
 HRESULT CFade::Init(void)
 {
-	m_pBg = CBg::Create(CTexture::Text, OBJTYPE_FADE,false);
+	m_pBg = CBg::Create(CTexture::Test, OBJTYPE_FADE,false);
 
 	return S_OK;
 }

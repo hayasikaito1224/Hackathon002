@@ -26,7 +26,6 @@ public:
 	D3DXVECTOR3 GetPos() { return m_Pos; }
 	D3DXVECTOR3 GetScale() { return m_Scale; }
 	void SetDraw(bool bDraw) { m_bDraw = bDraw; }
-
 private:
 	D3DXVECTOR3 m_Pos;
 	D3DXVECTOR3 m_Scale;

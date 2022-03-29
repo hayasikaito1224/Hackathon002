@@ -48,9 +48,6 @@
     <ClInclude Include="mouse.h">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="Particle.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="player.h">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
@@ -105,9 +102,6 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="mouse.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Particle.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="player.cpp">

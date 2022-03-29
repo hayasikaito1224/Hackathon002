@@ -151,77 +151,21 @@ void CScene::DrawAll(void)
 {
 	for (int nObj = 0; nObj < OBJTYPE_MAX; nObj++)
 	{
-		if (nObj != OBJTYPE_MAP_UI)
+		if (m_pTop[nObj] != NULL)
 		{
-			if (m_pTop[nObj] != NULL)
+			CScene *m_pDraw = m_pTop[nObj];				//次に更新するオブジェクトの格納
+														//m_pUpdateにNULLが入るまで
+			while (m_pDraw)
 			{
-				CScene *m_pDraw = m_pTop[nObj];				//次に更新するオブジェクトの格納
-															//m_pUpdateにNULLが入るまで
-				while (m_pDraw)
+				if (m_pDraw->m_bDath == false)
 				{
-					if (m_pDraw->m_bDath == false)
-					{
-						m_pDraw->Draw();
-					}
-					m_pDraw = m_pDraw->m_pNext;
-
+					m_pDraw->Draw();
 				}
+				m_pDraw = m_pDraw->m_pNext;
+
 			}
-
 		}
-	}
-	//死亡フラグ判定
-	for (int nObj = 0; nObj < OBJTYPE_MAX; nObj++)
-	{
-		CScene *m_pDraw = m_pTop[nObj];				//次に更新するオブジェクトの格納
-		CScene *m_pDeleteDraw = NULL;				//次に更新するオブジェクトの格納
 
-		while (m_pDraw)
-		{
-			//次のデータが消えないように保存
-
-			m_pDeleteDraw = m_pDraw->m_pNext;
-			//死亡フラグが立っていたら
-			if (m_pDraw->m_bDath == true)
-			{
-				//消す
-				delete m_pDraw;
-				m_pDraw = NULL;
-			}
-			//次のオブジェクトにする
-			m_pDraw = m_pDeleteDraw;
-
-		}
-	}
-
-}
-//=============================================================================
-//マップに表示したいオブジェの描画
-//=============================================================================
-void CScene::MapDraw(void)
-{
-	for (int nObj = 0; nObj < OBJTYPE_MAX; nObj++)
-	{
-		if (nObj != OBJTYPE_SKY && nObj != OBJTYPE_PLAYER && nObj != OBJTYPE_EFFECT&&
-			nObj != OBJTYPE_MAGIC && nObj!= OBJTYPE_ENEMY && nObj != OBJTYPE_WALL&&
-			nObj != OBJTYPE_SHADOW)
-		{
-			if (m_pTop[nObj] != NULL)
-			{
-				CScene *m_pDraw = m_pTop[nObj];				//次に更新するオブジェクトの格納
-															//m_pUpdateにNULLが入るまで
-				while (m_pDraw)
-				{
-					if (m_pDraw->m_bDath == false)
-					{
-						m_pDraw->Draw();
-					}
-					m_pDraw = m_pDraw->m_pNext;
-
-				}
-			}
-
-		}
 	}
 	//死亡フラグ判定
 	for (int nObj = 0; nObj < OBJTYPE_MAX; nObj++)

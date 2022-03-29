@@ -13,7 +13,7 @@ public:
 	void Update(void);
 	void Draw(void);
 	void SetCol(D3DXCOLOR col);
-	static CBg *Create(CTexture::Type type = CTexture::Text, OBJTYPE nPriority = OBJTYPE_BG,bool bScrol = true);//インスタンス生成処理
+	static CBg *Create(CTexture::Type type = CTexture::Test, OBJTYPE nPriority = OBJTYPE_BG,bool bScrol = true);//インスタンス生成処理
 private:
 	CTexture::Type				m_Type;
 	float						m_fSpeed;

@@ -8,9 +8,6 @@
 #include "manager.h"
 #include "game.h"
 
-static bool s_bOnece = false;
-CCamera		*CRenderer::m_pCamera[2];
-
 //=============================================================================
 // コンストラクタ
 //=============================================================================
@@ -57,7 +54,6 @@ HRESULT CRenderer::Init(HINSTANCE hInstance, HWND hWnd, bool bWindow)
 	d3dpp.EnableAutoDepthStencil = TRUE;						// デプスバッファ（Ｚバッファ）とステンシルバッファを作成
 	d3dpp.AutoDepthStencilFormat = D3DFMT_D16;					// デプスバッファとして16bitを使う
 	d3dpp.Windowed = bWindow;						// ウィンドウモード
-	d3dpp.MultiSampleType = D3DMULTISAMPLE_2_SAMPLES;				//アンチエイリアスの設定
 	d3dpp.FullScreen_RefreshRateInHz = D3DPRESENT_RATE_DEFAULT;		// リフレッシュレート
 	d3dpp.PresentationInterval = D3DPRESENT_INTERVAL_DEFAULT;	// インターバル
 
@@ -139,15 +135,12 @@ HRESULT CRenderer::Init(HINSTANCE hInstance, HWND hWnd, bool bWindow)
 //=============================================================================
 void CRenderer::Uninit(void)
 {
-
-
 	// デバッグ情報表示用フォントの破棄
 	if (m_pFont != NULL)
 	{
 		m_pFont->Release();
 		m_pFont = NULL;
 	}
-
 
 	// デバイスの破棄
 	if (m_pD3DDevice != NULL)
@@ -178,29 +171,24 @@ void CRenderer::Update(void)
 void CRenderer::Draw(void)
 {
 
+	// バックバッファ＆Ｚバッファのクリア
+	m_pD3DDevice->Clear(0,
+		NULL,
+		(D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER),
+		D3DCOLOR_RGBA(0, 0, 0, 0), 1.0f, 0);
+
 	// Direct3Dによる描画の開始
 	if (SUCCEEDED(m_pD3DDevice->BeginScene()))
 	{
-		D3DVIEWPORT9 CurrentViewPort;
-		m_pD3DDevice->GetViewport(&CurrentViewPort);
-		// バックバッファ＆Ｚバッファのクリア
-		m_pD3DDevice->Clear(0,
-			NULL,
-			(D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER),
-			D3DCOLOR_RGBA(0, 0, 0, 0), 1.0f, 0);
-
-		//オブジェクトの描画
-		CScene::DrawAll();
-
+		CScene2D::DrawAll();
 #ifdef _DEBUG
-			// FPS表示
-			DrawFPS();
+		// FPS表示
+		DrawFPS();
 #endif
-		
-
 		// Direct3Dによる描画の終了
 		m_pD3DDevice->EndScene();
 	}
+
 	// バックバッファとフロントバッファの入れ替え
 	m_pD3DDevice->Present(NULL, NULL, NULL, NULL);
 

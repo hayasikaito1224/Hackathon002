@@ -14,22 +14,9 @@ public:
 	{
 		OBJTYPE_NONE = 0,
 		OBJTYPE_BG,
-		OBJTYPE_FIELD,				//床
-		OBJTYPE_WALL,				//壁
-		OBJTYPE_GIMMICKWALL,				//壁
-		OBJTYPE_SKY,				//床
-		OBJTYPE_MODEL,				//モデル
-		OBJTYPE_BLOCK,				//モデル
-		OBJTYPE_WOOD,				//モデル
 		OBJTYPE_PLAYER,				//プレイヤー
-		OBJTYPE_ENEMY,				//敵
-		OBJTYPE_ENEMY_BAUM,				//敵
-		OBJTYPE_MAGIC,				//魔法
 		OBJTYPE_EFFECT,				//エフェクト
-		OBJTYPE_SHADOW,				//エフェクト
-		OBJTYPE_ITEM,					//UI
 		OBJTYPE_POLYGON,
-		OBJTYPE_MAP_UI,				//マップに表示するUI
 		OBJTYPE_UI,					//UI
 		OBJTYPE_PAUSE,				//PAUSE
 		OBJTYPE_FADE,				//フェード
@@ -42,7 +29,6 @@ public:
 	virtual void Uninit(void) = 0;
 	virtual void Update(void) = 0;
 	virtual void Draw(void) = 0;
-	static void MapDraw(void);
 	void SetObjType(OBJTYPE objType) { m_ObjType = objType; }
 	void SetPos(D3DXVECTOR3 pos) { m_pos = pos; }
 	void SetScale(D3DXVECTOR3 Scale) { m_Scale = Scale; }

@@ -160,7 +160,6 @@
     <ClInclude Include="main.h" />
     <ClInclude Include="manager.h" />
     <ClInclude Include="mouse.h" />
-    <ClInclude Include="Particle.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="Polygon.h" />
     <ClInclude Include="Renderer.h" />
@@ -182,7 +181,6 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="manager.cpp" />
     <ClCompile Include="mouse.cpp" />
-    <ClCompile Include="Particle.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="polygon.cpp" />
     <ClCompile Include="Renderer.cpp" />

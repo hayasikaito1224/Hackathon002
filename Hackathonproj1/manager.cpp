@@ -290,18 +290,21 @@ void CManager::Draw(void)
 	case MODE_TITLE:		//タイトル画面
 		if (m_pTitle != NULL)
 		{
-			//m_pTitle->Update();
+			m_pTitle->Draw();
 		}
 		break;
 
 	case MODE_GAME:			//ゲーム画面
-
+		if (m_pGame != NULL)
+		{
+			m_pGame->Draw();
+		}
 		break;
 
 	case MODE_RESULT:		//リザルト画面
 		if (m_pResult != NULL)
 		{
-			//m_pResult->Update();
+			m_pResult->Draw();
 		}
 		break;
 	}
