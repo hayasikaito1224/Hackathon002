@@ -235,33 +235,33 @@ void CManager::Update(void)
 		if (m_pGame != NULL)
 		{
 			m_pGame->Update();
-			//ポーズ
-			if (m_XInput->GetButtonTrigger(XINPUT_GAMEPAD_START) == true||
-				m_pDirectInput->GetButtonTrigger(m_pDirectInput->START))
-			{
-				if(m_bEnd == false)
-				m_bStop = m_bStop ? false : true;
+			////ポーズ
+			//if (m_XInput->GetButtonTrigger(XINPUT_GAMEPAD_START) == true||
+			//	m_pDirectInput->GetButtonTrigger(m_pDirectInput->START))
+			//{
+			//	if(m_bEnd == false)
+			//	m_bStop = m_bStop ? false : true;
 
-				m_bPause = m_bPause ? false : true;
-				m_pSound->PlaySound(m_pSound->SOUND_LABEL_SE_ENTER);	// タイトルサウンド
-				m_pSound->ControllVoice(m_pSound->SOUND_LABEL_SE_ENTER,0.6f);	// タイトルサウンド
+			//	m_bPause = m_bPause ? false : true;
+			//	m_pSound->PlaySound(m_pSound->SOUND_LABEL_SE_ENTER);	// タイトルサウンド
+			//	m_pSound->ControllVoice(m_pSound->SOUND_LABEL_SE_ENTER,0.6f);	// タイトルサウンド
 
-			}
-			if (m_bStop == true)
-			{
-				if (m_pPause == NULL)
-				{
-					//m_pPause = CPause::Create(D3DXVECTOR3(640.0f, 400.0f, 0.0f));
-				}
-			}
-			else
-			{
-				if (m_pPause != NULL)
-				{
-					m_pPause = NULL;
-				}
+			//}
+			//if (m_bStop == true)
+			//{
+			//	if (m_pPause == NULL)
+			//	{
+			//		//m_pPause = CPause::Create(D3DXVECTOR3(640.0f, 400.0f, 0.0f));
+			//	}
+			//}
+			//else
+			//{
+			//	if (m_pPause != NULL)
+			//	{
+			//		m_pPause = NULL;
+			//	}
 
-			}
+			//}
 
 		}
 		break;
