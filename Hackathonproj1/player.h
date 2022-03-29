@@ -23,13 +23,10 @@ public:
 	void AddState(float& fAngle);//ŒX‚«Šp“x‚Ì•âŠÔ
 	void DefState(float& fAngle);//ŒX‚«Šp“x‚Ì•âŠÔ
 
-	float GetSandRemaining() { return m_fSandRemaining; }
-
 private:
 	CScene2D *m_pPlayer;//»‘Ü
 	bool m_bGameStop;
 	float m_fMoveAngle;//ŒX‚«‚ÌŠp“x
-	float m_fSandRemaining;//»‚Ìc—Ê
 
 };
 

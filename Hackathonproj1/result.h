@@ -9,6 +9,11 @@
 //前方宣言
 class CBg;
 class CPolygon;
+class CWeight;
+class CGoalScore;
+class CScore;
+class CRank;
+
 class CResult
 {
 public:
@@ -31,8 +36,13 @@ private:
 	CPolygon			*pPolygon[MAX_RESULT];
 	CPolygon			*m_Cursol;
 
+	static CScore		*m_pScore;
 	static CBg			*m_pBg;
-	bool					m_bNextMode;//次のモードに行くための
+	static CWeight		*m_Weight;
+	static CGoalScore	*m_GoalScore;
+	static CRank		*m_Rank;
+
+	bool				m_bNextMode;//次のモードに行くための
 	int					m_nSelectType;
 
 };

@@ -36,7 +36,7 @@ CTitle			*CManager::m_pTitle = NULL;
 CResult			*CManager::m_pResult = NULL;
 CFade			*CManager::m_Fade = NULL;
 CXInput			*CManager::m_XInput = NULL;
-CManager::MODE	 CManager::m_Mode = MODE_GAME;		// 初期モード
+CManager::MODE	 CManager::m_Mode = MODE_TITLE;		// 初期モード
 CMouse			*CManager::m_Mouse = NULL;
 CSound			*CManager::m_pSound = NULL;
 CPause			*CManager::m_pPause = NULL;
@@ -408,6 +408,8 @@ void CManager::SetMode(MODE mode)
 	case MODE_TITLE:		//タイトル画面
 		if (m_pTitle == NULL)
 		{
+			GetData()->ResetData();
+
 			m_bClear = false;
 			m_pTitle = new CTitle;
 			m_pTitle->Init();

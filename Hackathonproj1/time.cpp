@@ -11,6 +11,7 @@
 #include "data.h"
 #include "fade.h"
 #include "game.h"
+#include "data.h"
 #include "player.h"
 
 //=============================================================================
@@ -84,8 +85,10 @@ void CTime::Update(void)
 	if (m_nTime <= 0)
 	{
 		m_nTime = 0;
+		pData->ReverseNowGame();
 		//スコアをセット
-		pData->SetScore(abs(abs(pData->GetTargetScore()) - abs(CManager::GetGame()->GetPlayer()->GetSandRemaining() * 10.0f)));
+		pData->SetScore(abs(abs(pData->GetTargetScore()) - abs(CManager::GetData()->GetSandRemaining() * 10.0f)));
+
 	}
 
 	for (int nCnt = 0; nCnt < TIME_DIGITS; nCnt++)

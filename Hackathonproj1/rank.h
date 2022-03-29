@@ -1,11 +1,11 @@
 //=============================================================================
 //
-// スコア [score.h]
+// ランキング [rank.h]
 // Author : 三橋錬
 //
 //=============================================================================
-#ifndef _SCORE_H_
-#define _SCORE_H_
+#ifndef _RANK_H_
+#define _RANK_H_
 
 //*****************************************************************************
 // ヘッダファイルのインクルード
@@ -16,33 +16,32 @@
 //*****************************************************************************
 // マクロ定義
 //*****************************************************************************
-#define SCORE_DIGITS (4)				// スコアの桁数
-#define MAX_SCORE (9999)
+#define RANK_DIGITS (4)				// スコアの桁数
+#define MAX_RANK (9999)
 
 //*****************************************************************************
 // クラス定義
 //*****************************************************************************
-class CScore : public CScene
+class CRank : public CScene
 {
 public:
-	CScore(OBJTYPE nPriority = CScene::OBJTYPE_UI);
-	~CScore();
+	CRank(OBJTYPE nPriority = CScene::OBJTYPE_UI);
+	~CRank();
 
 	HRESULT Init(void);
 	void Uninit(void);
 	void Update(void);
 	void Draw(void);
 
-	static CScore *Create(D3DXVECTOR3 pos, D3DXVECTOR3 size);
+	static CRank *Create(D3DXVECTOR3 pos, D3DXVECTOR3 size);
 
-	void SetScore(int nScore);
-	int GetScore() {return m_nScore; }
+	void SetRank(int num, int nRank);
 
 private:
 	void Set(D3DXVECTOR3 pos, D3DXVECTOR3 size);
 
-	CNumber							*m_apNumber[SCORE_DIGITS];
-	int								m_nScore;
+	CNumber							*m_apNumber[5][RANK_DIGITS];
+	int								m_nRank[5];
 
 	D3DXVECTOR3						m_pos;
 	D3DXVECTOR3						m_size;

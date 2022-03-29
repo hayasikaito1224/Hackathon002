@@ -33,7 +33,6 @@
 CPlayer::CPlayer(OBJTYPE nPriority) : CScene(nPriority)
 {
 	m_pPlayer = nullptr;
-	m_fSandRemaining = 300.0f;
 }
 //--------------------------
 //デストラクト
@@ -120,8 +119,7 @@ void CPlayer::Incline()
 		DefState(m_fMoveAngle);
 	}
 	//砂を減らす
-	m_fSandRemaining -= abs(m_fMoveAngle) / 100;
-	pWeight->SetWeight(m_fSandRemaining * 10);
+	CManager::GetData()->SetSandRemaining(CManager::GetData()->GetSandRemaining() - abs(m_fMoveAngle) / 100);
 
 	m_pPlayer->SetAngle(D3DXToRadian(m_fMoveAngle));
 	m_pPlayer->Rotate({ PLAYER_POS_X ,PLAYER_POS_Y,0.0f }, { PLAYER_SCALE_X ,PLAYER_SCALE_Y ,0.0f });

@@ -171,6 +171,7 @@
     <ClInclude Include="number.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="Polygon.h" />
+    <ClInclude Include="rank.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="result.h" />
     <ClInclude Include="Rotate.h" />
@@ -205,6 +206,7 @@
     <ClCompile Include="number.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="polygon.cpp" />
+    <ClCompile Include="rank.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="result.cpp" />
     <ClCompile Include="Rotate.cpp" />

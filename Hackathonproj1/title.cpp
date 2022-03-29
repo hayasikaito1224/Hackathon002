@@ -47,6 +47,7 @@ HRESULT CTitle::Init(void)
 	m_Polygon[1] = CPolygon::Create(D3DXVECTOR3(SCREEN_WIDTH/3.0f, SCREEN_HEIGHT / 2 + 200.0f, 0.0f), D3DXVECTOR3(280.0f, 50.0f, 0.0f), CTexture::TitleEnter);	//エンター文字
 
 	m_Polygon[2] = CPolygon::Create(D3DXVECTOR3(SCREEN_WIDTH / 5.0f * 4, SCREEN_HEIGHT / 2.0f, 0.0f), D3DXVECTOR3(220.0f, 280.0f, 0.0f), CTexture::Rule);	//ルール
+
 	return S_OK;
 }
 //--------------------------------------------

@@ -9,6 +9,7 @@
 #include "renderer.h"
 #include "keyboard.h"
 #include "data.h"
+#include "sound.h"
 
 //=============================================================================
 // コンストラクタ
@@ -58,10 +59,19 @@ void CWeight::Uninit(void)
 //=============================================================================
 void CWeight::Update(void)
 {
+	m_nWeight = int(CManager::GetData()->GetSandRemaining() * 10.0f);
+
 	if (CManager::GetData()->GetNowGame())
 	{
+		if (CManager::GetInputKeyboard()->GetTrigger(DIK_SPACE))
+		{
+			CManager::GetSound()->PlaySoundA(CSound::SOUND_LABEL_SE_POUR);
+		}
+
 		if (CManager::GetInputKeyboard()->GetPress(DIK_SPACE))
 		{
+
+
 			m_nWeight--;
 		}
 	}

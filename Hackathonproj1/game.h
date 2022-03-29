@@ -35,6 +35,8 @@ private:
 	static CBg			*m_pBg;
 	static CPlayer		*m_Player;
 	static CPolygon		*m_Polygon;
+	static CPolygon		*m_Sign;//ŠÅ”Â‚Ìƒ|ƒŠƒSƒ“
+
 	static CHide		*m_Hide;//d—Ê‚ğ‰B‚·ƒ|ƒŠƒSƒ“
 	static CWeight		*m_Weight;
 	static CTime		*m_Time;

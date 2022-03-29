@@ -42,7 +42,6 @@ HRESULT CGoalScore::Init(void)
 //=============================================================================
 void CGoalScore::Uninit(void)
 {
-	CManager::GetData()->SetScore(m_nGoalScore);
 	for (int nCnt = 0; nCnt < GOAL_DIGITS; nCnt++)
 	{
 		if (m_apNumber[nCnt] != NULL)
