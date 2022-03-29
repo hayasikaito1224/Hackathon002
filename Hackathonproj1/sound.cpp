@@ -10,7 +10,8 @@ CSound::PARAM CSound::m_aParam[SOUND_LABEL_MAX] =
 	// ＢＧＭ
 	//=======================================================================================
 	{ "data\\BGM\\Title.wav"	, XAUDIO2_LOOP_INFINITE },			// タイトルのBGM
-	{ "data\\BGM\\Filed.wav"	, XAUDIO2_LOOP_INFINITE },			// ゲームのBGM
+	{ "data\\BGM\\Game.wav"	, XAUDIO2_LOOP_INFINITE },				// ゲームのBGM
+	{ "data\\BGM\\Result.wav"	, XAUDIO2_LOOP_INFINITE },			// リザルトのBGM
 	
 	//=======================================================================================
 	// ＳＥ
@@ -26,7 +27,8 @@ CSound::PARAM CSound::m_aParam[SOUND_LABEL_MAX] =
 	{ "data\\SE\\Fire.wav"					, XAUDIO2_NO_LOOP_REGION },		// 火魔法
 	{ "data\\SE\\Ice.wav"					, XAUDIO2_NO_LOOP_REGION },		// 氷魔法
 	{ "data\\SE\\Heel.wav"					, XAUDIO2_NO_LOOP_REGION },		// 回復
-	{ "data\\SE\\Walk01.wav"					, XAUDIO2_NO_LOOP_REGION }		// 敵の移動音
+	{ "data\\SE\\Walk01.wav"					, XAUDIO2_NO_LOOP_REGION },		// 敵の移動音
+	{ "data\\SE\\pour00.wav"					, XAUDIO2_NO_LOOP_REGION }		// 注ぐ音
 
 };
 
