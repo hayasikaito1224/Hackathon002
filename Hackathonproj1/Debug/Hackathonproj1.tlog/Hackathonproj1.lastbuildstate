@@ -1,2 +1,17 @@
+<<<<<<< HEAD
 #TargetFrameworkVersion=v4.0:PlatformToolSet=v140:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit:WindowsTargetPlatformVersion=8.1
 Debug|Win32|C:\Users\student\Desktop\git\Hackathon002\Hackathonproj1\|
+=======
+<<<<<<< HEAD
+#TargetFrameworkVersion=v4.0:PlatformToolSet=v140:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit:WindowsTargetPlatformVersion=8.1
+Debug|Win32|C:\Users\student\Desktop\Hackathon002\Hackathonproj1\|
+=======
+<<<<<<< HEAD
+#TargetFrameworkVersion=v4.0:PlatformToolSet=v140:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit:WindowsTargetPlatformVersion=8.1
+Debug|Win32|C:\Users\student\Desktop\git\Hackathon002\Hackathonproj1\|
+=======
+#TargetFrameworkVersion=v4.0:PlatformToolSet=v140:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit:WindowsTargetPlatformVersion=8.1
+Debug|Win32|C:\Users\student\Desktop\git接続フォルダ\Hackathon002\Hackathonproj1\|
+>>>>>>> 55785667e568469be055e3913eebc29e528cf78f
+>>>>>>> c2c5454d9a9e6b8cbb76e1e99e62eaccbd05a92f
+>>>>>>> 21f702e0cf53c49e919389f3dae7ba7c25da1cf5
