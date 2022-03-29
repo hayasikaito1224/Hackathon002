@@ -26,6 +26,7 @@ public:
 		//--------------------------
 		SOUND_LABEL_BGM_TITLE = 0,			// タイトルのBGM
 		SOUND_LABEL_BGM_GAME,				// ゲームのBGM
+		SOUND_LABEL_BGM_RESULT,				// リザルトのBGM
 
 		//--------------------------
 		// ＳＥ
@@ -42,6 +43,8 @@ public:
 		SOUND_LABEL_SE_ICE,				// 氷魔法
 		SOUND_LABEL_SE_HEEL,				// 回復
 		SOUND_LABEL_SE_ENEMYWALK,				// 敵の移動音
+
+		SOUND_LABEL_SE_POUR,				// 注ぐ音
 
 		SOUND_LABEL_MAX
 
