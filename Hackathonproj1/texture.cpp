@@ -63,7 +63,7 @@ void CTexture::Init(void)
 		"data/TEXTURE/Hakari.png",//秤
 		&m_pTexture[Balance]);
 
-	//テクスチャの読み込み
+	//テクスチャの読み込み 
 	D3DXCreateTextureFromFile(pDevice,
 		"data/TEXTURE/black.png",//フェード
 		&m_pTexture[Fade]);
@@ -83,10 +83,27 @@ void CTexture::Init(void)
 		"data/TEXTURE/TitleBG.jpg",//タイトル背景
 		&m_pTexture[TitleBG]);
 
+	//テクスチャの読み込み
 	D3DXCreateTextureFromFile(pDevice,
 		"data/TEXTURE/Effect000.jpg",//エフェクト（粒）
 		&m_pTexture[Effect]);
 
+	//テクスチャの読み込み
+	D3DXCreateTextureFromFile(pDevice,
+		"data/TEXTURE/star.png",//エフェクト（星）
+		&m_pTexture[Star]);
+
+	D3DXCreateTextureFromFile(pDevice,
+		"data/TEXTURE/Start000.png",//スタート文字
+		&m_pTexture[Start]);
+
+	D3DXCreateTextureFromFile(pDevice,
+		"data/TEXTURE/Finish000.png",//フィニッシュ文字
+		&m_pTexture[Finish]);
+
+	D3DXCreateTextureFromFile(pDevice,
+		"data/TEXTURE/rule.png",//ルール
+		&m_pTexture[Rule]);
 }
 
 //=============================================================================

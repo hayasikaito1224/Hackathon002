@@ -159,6 +159,7 @@
     <ClInclude Include="fade.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="goalscore.h" />
+    <ClInclude Include="hide.h" />
     <ClInclude Include="input.h" />
     <ClInclude Include="keyboard.h" />
     <ClInclude Include="LoadEffect.h" />
@@ -173,6 +174,7 @@
     <ClInclude Include="rank.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="result.h" />
+    <ClInclude Include="Rotate.h" />
     <ClInclude Include="scene.h" />
     <ClInclude Include="scene2D.h" />
     <ClInclude Include="score.h" />
@@ -192,6 +194,7 @@
     <ClCompile Include="fade.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="goalscore.cpp" />
+    <ClCompile Include="hide.cpp" />
     <ClCompile Include="input.cpp" />
     <ClCompile Include="keyboard.cpp" />
     <ClCompile Include="LoadEffect.cpp" />
@@ -206,6 +209,7 @@
     <ClCompile Include="rank.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="result.cpp" />
+    <ClCompile Include="Rotate.cpp" />
     <ClCompile Include="scene.cpp" />
     <ClCompile Include="scene2D.cpp" />
     <ClCompile Include="score.cpp" />

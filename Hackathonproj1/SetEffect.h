@@ -20,6 +20,7 @@ public:
 	{
 		int m_nPattern;			//動きのパターン
 		D3DXVECTOR3 m_pos;		//位置
+		float m_fRotate;		//回転
 		D3DXVECTOR3 m_Endpos;	//向かうべき位置
 		D3DXVECTOR3 m_move;		//移動量
 		D3DXVECTOR3 m_Addmove;	//移動量加算
@@ -46,6 +47,7 @@ public:
 	//読み込んだエフェクトの情報を格納するやつ
 	static void SetEffectState2D(int nPattern,
 		D3DXVECTOR3 pos,
+		float fRotate,
 		D3DXVECTOR3 move,
 		D3DXVECTOR3 Addmove,
 		int Diffusion,

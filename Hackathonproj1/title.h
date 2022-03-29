@@ -5,7 +5,7 @@
 #define _TITLE_H
 #include "main.h"
 #include "scene.h"
-#define MAX_TITLE_POLYGON (5)
+#define MAX_TITLE_POLYGON (3)
 //前方宣言
 class CBg;
 class CPolygon;
@@ -28,7 +28,7 @@ public:
 	void NextMode(bool bNextMode) { m_bNextMode = bNextMode; }
 
 private:
-	CPolygon			*m_Polygon[2];
+	CPolygon			*m_Polygon[3];
 	int					m_nSelectType;//選択したタイプ
 	int					m_nCount;//文字点滅用のカウント
 	int					m_nAlpha;//文字のアルファ値

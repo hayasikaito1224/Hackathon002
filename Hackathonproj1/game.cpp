@@ -18,7 +18,7 @@
 #include "data.h"
 #include "goalscore.h"
 #include <random>
-
+#include "hide.h"
 static const D3DXVECTOR3 BalanceSize = { 250.0f, 125.0f, 0.0f };//秤の大きさ
 static const D3DXVECTOR3 BalancePos = { SCREEN_WIDTH/2, 550.0f, 0.0f };//秤の位置
 
@@ -29,6 +29,7 @@ CPolygon *CGame::m_Polygon = nullptr;
 CWeight *CGame::m_Weight = nullptr;
 CTime *CGame::m_Time = nullptr;
 CGoalScore *CGame::m_GoalScore = nullptr;
+CHide *CGame::m_Hide = nullptr;
 
 static float s_texrotx = 0.0f;
 static float s_texseax = 0.0f;
@@ -46,8 +47,9 @@ CGame::CGame()
 	m_Weight = nullptr;
 	m_Time = nullptr;
 	m_bPush = false;
-	m_bEnd = false;
+	m_bGameEnd = false;
 	m_GoalScore = nullptr;
+	m_Hide = nullptr;
 }
 //--------------------------------------------
 //デストラクタ
@@ -98,6 +100,11 @@ HRESULT CGame::Init()
 		m_Player = CPlayer::Create();
 	}
 
+	//重量を隠す用のポリゴンの生成
+	if (!m_Hide)
+	{
+		m_Hide = CHide::Create();
+	}
 	m_fAlpha = 1.0f;
 	m_bNextMode = false;
 	m_nTimer = 0;
@@ -128,6 +135,12 @@ void CGame::Uninit()
 		m_Weight = nullptr;
 	}
 
+	if (m_Hide != nullptr)
+	{
+		m_Hide->Uninit();
+		m_Hide = nullptr;
+	}
+
 	if (m_Time != nullptr)
 	{
 		m_Time->Uninit();
@@ -145,10 +158,51 @@ void CGame::Uninit()
 //--------------------------------------------
 void CGame::Update()
 {
-	//DirectInputのゲームパッドの取得
+	if (m_Hide)
+	{
+		m_Hide->Update();
+	}
+	//タイムが半分を切ったら
+	{
+		int nTime = m_Time->GetTimet();
+		if (nTime <= 5&& nTime > 0)
+		{
+			if (m_Hide)
+			{
+				//ポリゴンが上がる設定にする
+				m_Hide->IsUp(true);
+			}
+		}
+		if (nTime <= 0)
+		{
+			if (m_Hide)
+			{
+				//ポリゴンが上がる設定にする
+				m_Hide->IsUp(false);
+				m_Hide->IsDown(true);
+				//重量を隠す画像が元の位置に戻ったらゲーム終了
+				if (m_Hide->GetPosBase())
+				{
+					m_bGameEnd = true;
+				}
+			}
+		}
+	}
+	//ゲームの終了判定がオンなら
+	if (m_bGameEnd)
+	{
+		if (m_bNextMode == false)
+		{
+			//CManager::GetSound()->PlaySoundA(CSound::SOUND_LABEL_SE_ENTER);
+			//CManager::GetSound()->ControllVoice(CSound::SOUND_LABEL_SE_ENTER, 0.6f);
 
-	//ゲームが続いていたら
+			//リザルトモードへ行く
+			CFade::SetFade(CManager::MODE_RESULT);
 
+			//二回以上通らないようにする
+			m_bNextMode = true;
+		}
+	}
 }
 
 //--------------------------------------------

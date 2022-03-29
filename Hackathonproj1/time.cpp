@@ -85,6 +85,7 @@ void CTime::Update(void)
 	if (m_nTime <= 0)
 	{
 		m_nTime = 0;
+<<<<<<< HEAD
 
 		if (m_bNextMode == false)
 		{
@@ -101,6 +102,10 @@ void CTime::Update(void)
 
 			pData->ReverseNowGame();
 		}
+=======
+		//スコアをセット
+		pData->SetScore(abs(abs(pData->GetTargetScore()) - abs(CManager::GetGame()->GetPlayer()->GetSandRemaining() * 10.0f)));
+>>>>>>> d9e02a80d5581a093dca612cafe233b02a225b88
 	}
 
 	for (int nCnt = 0; nCnt < TIME_DIGITS; nCnt++)

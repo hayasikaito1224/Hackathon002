@@ -24,9 +24,9 @@ protected:
 	bool m_bUninit;
 	int m_nLife;
 	D3DXVECTOR2 m_Size;			//大きさ
+	D3DXVECTOR2 m_MinSize;		//大きさ変動
 
 private:
-
 
 	//カラー値
 	D3DCOLORVALUE m_Color;
@@ -34,7 +34,6 @@ private:
 	//減らすカラー値
 	D3DCOLORVALUE m_MinColor;
 
-	D3DXVECTOR2 m_MinSize;		//大きさ変動
 	D3DXVECTOR2 m_move;			//移動
 
 

@@ -19,6 +19,9 @@
     <Filter Include="ソース ファイル\Data">
       <UniqueIdentifier>{a71d2f79-fc88-4083-864b-e021ec3d6aa6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Hide">
+      <UniqueIdentifier>{91a60dc4-a50c-405c-9859-b1349c131e90}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="directinput.h">
@@ -111,8 +114,18 @@
     <ClInclude Include="goalscore.h">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="rank.h">
       <Filter>ソース ファイル</Filter>
+=======
+<<<<<<< HEAD
+    <ClInclude Include="hide.h">
+      <Filter>ソース ファイル\Hide</Filter>
+=======
+    <ClInclude Include="Rotate.h">
+      <Filter>ソース ファイル\Effect</Filter>
+>>>>>>> c2c5454d9a9e6b8cbb76e1e99e62eaccbd05a92f
+>>>>>>> d9e02a80d5581a093dca612cafe233b02a225b88
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -206,8 +219,18 @@
     <ClCompile Include="goalscore.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="rank.cpp">
       <Filter>ソース ファイル</Filter>
+=======
+<<<<<<< HEAD
+    <ClCompile Include="hide.cpp">
+      <Filter>ソース ファイル\Hide</Filter>
+=======
+    <ClCompile Include="Rotate.cpp">
+      <Filter>ソース ファイル\Effect</Filter>
+>>>>>>> c2c5454d9a9e6b8cbb76e1e99e62eaccbd05a92f
+>>>>>>> d9e02a80d5581a093dca612cafe233b02a225b88
     </ClCompile>
   </ItemGroup>
 </Project>
