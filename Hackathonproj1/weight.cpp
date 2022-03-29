@@ -32,7 +32,7 @@ CWeight::~CWeight()
 HRESULT CWeight::Init(void)
 {
 	for (int nCnt = 0; nCnt < WEIGHT_DIGITS; nCnt++)	m_apNumber[nCnt] = 0;
-	m_nWeight = 520;
+	m_nWeight = 0;
 
 	return S_OK;
 }

@@ -28,11 +28,11 @@ CScene2D::~CScene2D()
 //---------------------------------------------------------------
 //インスタンス生成処理
 //---------------------------------------------------------------
-CScene2D *CScene2D::Create(D3DXVECTOR3 pos, D3DXVECTOR3 scale, CTexture::Type texture)
+CScene2D *CScene2D::Create(D3DXVECTOR3 pos, D3DXVECTOR3 scale, CTexture::Type texture, CScene::OBJTYPE type)
 {
 
 	//インスタンス生成
-	CScene2D *pScene2D = new CScene2D;
+	CScene2D *pScene2D = new CScene2D(type);
 	if (pScene2D != NULL)
 	{
 		pScene2D->m_pos = pos;

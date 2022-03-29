@@ -13,6 +13,7 @@
 #include "keyboard.h"
 #include "Polygon.h"
 #include "directinput.h"
+#include "weight.h"
 //------------------------------------
 //ƒ}ƒNƒ’è‹`
 //------------------------------------
@@ -20,6 +21,7 @@
 #define PLAYER_POS_Y (SCREEN_HEIGHT/2.0f)
 #define PLAYER_SCALE_X (70.0)
 #define PLAYER_SCALE_Y (70.0)
+#define PLAYER_ANGLE_MAX (40.0)//ŒX‚«‚ÌÅ‘å’l
 
 //--------------------------
 //ƒRƒ“ƒXƒgƒ‰ƒNƒg
@@ -51,7 +53,7 @@ CPlayer *CPlayer::Create()
 HRESULT CPlayer::Init()
 {
 	//ƒ|ƒŠƒSƒ“‚Ì¶¬
-	m_pPlayer = CScene2D::Create({ PLAYER_POS_X ,PLAYER_POS_Y,0.0f }, { PLAYER_SCALE_X ,PLAYER_SCALE_Y ,0.0f}, CTexture::Test);
+	m_pPlayer = CScene2D::Create({ PLAYER_POS_X ,PLAYER_POS_Y,0.0f }, { PLAYER_SCALE_X ,PLAYER_SCALE_Y ,0.0f}, CTexture::Bag,OBJTYPE_PLAYER);
 	return S_OK;
 }
 ///-------------------------------------------
@@ -88,8 +90,41 @@ void CPlayer::Incline()
 	CInputKeyBoard *pKeyBoard = CManager::GetInputKeyboard();
 	if (pKeyBoard->GetPress(DIK_SPACE) == true)
 	{
-		m_pPlayer->SetAngle(D3DXToRadian(-40.0f));
-		m_pPlayer->Rotate({ PLAYER_POS_X ,PLAYER_POS_Y,0.0f }, { PLAYER_SCALE_X ,PLAYER_SCALE_Y ,0.0f });
+		AddState(m_fMoveAngle);
 
+	}
+	else
+	{
+		DefState(m_fMoveAngle);
+	}
+	//»‚ðŒ¸‚ç‚·
+	m_fSandRemaining -= m_fMoveAngle / 100;
+	CWeight *pWeight = CManager::GetGame()->GetWeight();
+	pWeight->SetWeight(m_fSandRemaining*10);
+
+	m_pPlayer->SetAngle(D3DXToRadian(m_fMoveAngle));
+	m_pPlayer->Rotate({ PLAYER_POS_X ,PLAYER_POS_Y,0.0f }, { PLAYER_SCALE_X ,PLAYER_SCALE_Y ,0.0f });
+
+}
+//-------------------------------------------
+//ŒX‚«Šp“x‚Ì•âŠÔ
+//-------------------------------------------
+void CPlayer::AddState(float & fAngle)
+{
+	fAngle -= 2.0f;
+	if (fAngle <= -PLAYER_ANGLE_MAX)
+	{
+		fAngle = -PLAYER_ANGLE_MAX;
+	}
+}
+//-------------------------------------------
+//ŒX‚«Šp“x‚Ì•âŠÔ
+//-------------------------------------------
+void CPlayer::DefState(float & fAngle)
+{
+	fAngle += 2.0f;
+	if (fAngle >= 0.0f)
+	{
+		fAngle = 0.0f;
 	}
 }
