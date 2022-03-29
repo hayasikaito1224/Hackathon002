@@ -30,6 +30,7 @@ CEffect::~CEffect()
 HRESULT CEffect::Init(D3DXVECTOR3 pos, D3DCOLORVALUE color, D3DCOLORVALUE Mincolor, D3DXVECTOR2 Size, D3DXVECTOR2 MinSize, int nLife, int nType)
 {
 	CScene2D::Init();
+	CScene2D::BindTexture(CTexture::Test);		//テクスチャ貼り付け
 
 	m_Color = color;
 	m_MinColor = Mincolor;

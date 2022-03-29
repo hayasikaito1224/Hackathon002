@@ -17,6 +17,15 @@
 #include "sound.h"
 #include "directinput.h"
 #include <random>
+
+//エフェクト
+#include "LoadEffect.h"
+
+//*****************************************************************************
+//マクロ
+//*****************************************************************************
+#define EFFECTSTATE_TEXT ("data/TEXT/EffectState.txt")	//エフェクトの情報が入ってるテキストのパス
+
 //静的メンバ変数宣言
 CInputKeyBoard	*CManager::m_pInputKeyboard = NULL;
 CRenderer		*CManager::m_pRenderer = NULL;
@@ -124,6 +133,10 @@ HRESULT CManager::Init(HINSTANCE hInstance, HWND hWnd, bool bWindow)
 		m_pDirectInput = new CDirectInput;
 		m_pDirectInput->Init(hInstance, hWnd);
 	}
+
+	//エフェクト情報の読み込み
+	CLoadEffect::EffectStateLoad(EFFECTSTATE_TEXT);
+
 	return S_OK;
 }
 //--------------------------------------------
