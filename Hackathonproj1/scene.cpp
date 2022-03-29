@@ -157,10 +157,7 @@ void CScene::DrawAll(void)
 														//m_pUpdate‚ÉNULL‚ª“ü‚é‚Ü‚Å
 			while (m_pDraw)
 			{
-				if (m_pDraw->m_bDath == false)
-				{
-					m_pDraw->Draw();
-				}
+				m_pDraw->Draw();
 				m_pDraw = m_pDraw->m_pNext;
 
 			}

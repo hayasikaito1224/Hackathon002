@@ -87,26 +87,11 @@ HRESULT CRenderer::Init(HINSTANCE hInstance, HWND hWnd, bool bWindow)
 		}
 	}
 	// レンダーステートの設定
-	m_pD3DDevice->SetRenderState(D3DRS_CULLMODE, D3DCULL_CCW);				// カリングを行わない
+	m_pD3DDevice->SetRenderState(D3DRS_CULLMODE, D3DCULL_NONE);				// カリングを行わない
 	m_pD3DDevice->SetRenderState(D3DRS_ZENABLE, TRUE);						// Zバッファを使用
 	m_pD3DDevice->SetRenderState(D3DRS_ALPHABLENDENABLE, TRUE);				// αブレンドを行う
 	m_pD3DDevice->SetRenderState(D3DRS_SRCBLEND, D3DBLEND_SRCALPHA);		// αソースカラーの指定
 	m_pD3DDevice->SetRenderState(D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA);	// αデスティネーションカラーの指定
-	////フォグの処理
-	//float Start = 0.0f;    // For linear mode
-	//float End = 2000.0f;
-	//float Density = 0.03f;   // For exponential modes
-	//						 // Enable fog blending.
-	//m_pD3DDevice->SetRenderState(D3DRS_FOGENABLE, TRUE);
-
-	//// Set the fog color.
-	//m_pD3DDevice->SetRenderState(D3DRS_FOGCOLOR, D3DCOLOR_ARGB(255, 0, 0, 0));
-
-	//// Set fog parameters.
-	//m_pD3DDevice->SetRenderState(D3DRS_FOGTABLEMODE, D3DFOG_LINEAR);
-	//m_pD3DDevice->SetRenderState(D3DRS_FOGSTART, *(DWORD *)(&Start));
-	//m_pD3DDevice->SetRenderState(D3DRS_FOGEND, *(DWORD *)(&End));
-	//m_pD3DDevice->SetRenderState(D3DRS_FOGDENSITY, *(DWORD *)(&Density));
 
 																			// サンプラーステートの設定
 	m_pD3DDevice->SetSamplerState(0, D3DSAMP_ADDRESSU, D3DTADDRESS_WRAP);	// テクスチャアドレッシング方法(U値)を設定

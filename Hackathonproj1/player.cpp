@@ -16,12 +16,17 @@
 //------------------------------------
 //マクロ定義
 //------------------------------------
+#define PLAYER_POS_X (SCREEN_WIDTH/2.0f)
+#define PLAYER_POS_Y (SCREEN_HEIGHT/2.0f)
+#define PLAYER_SCALE_X (70.0)
+#define PLAYER_SCALE_Y (70.0)
 
 //--------------------------
 //コンストラクト
 //--------------------------
-CPlayer::CPlayer(OBJTYPE nPriority) : CScene2D(nPriority)
+CPlayer::CPlayer(OBJTYPE nPriority) : CScene(nPriority)
 {
+	m_pPlayer = nullptr;
 }
 //--------------------------
 //デストラクト
@@ -36,7 +41,7 @@ CPlayer::~CPlayer()
 CPlayer *CPlayer::Create()
 {
 	CPlayer *pPlayer = NULL;
-	pPlayer = new CPlayer;
+	pPlayer = new CPlayer(OBJTYPE_PLAYER);
 	pPlayer->Init();
 	return pPlayer;
 }
@@ -45,6 +50,8 @@ CPlayer *CPlayer::Create()
 //---------------------------------------------
 HRESULT CPlayer::Init()
 {
+	//ポリゴンの生成
+	m_pPlayer = CScene2D::Create({ PLAYER_POS_X ,PLAYER_POS_Y,0.0f }, { PLAYER_SCALE_X ,PLAYER_SCALE_Y ,0.0f}, CTexture::Test);
 	return S_OK;
 }
 ///-------------------------------------------
@@ -52,6 +59,7 @@ HRESULT CPlayer::Init()
 //------------------------------------------
 void CPlayer::Uninit()
 {
+	
 	Release();
 }
 //-------------------------------------------
@@ -61,22 +69,27 @@ void CPlayer::Update()
 {
 	CXInput *pGamePad = CManager::GetXInput();
 	CInputKeyBoard *pKeyBoard = CManager::GetInputKeyboard();
+
+	//傾ける処理
+	Incline();
 }
 //-------------------------------------------
 //描画処理
 //-------------------------------------------
 void CPlayer::Draw()
 {
-
-
-
 }
 //-------------------------------------------
 //袋を傾ける処理
 //-------------------------------------------
 void CPlayer::Incline()
 {
+	//スペースを押したら
+	CInputKeyBoard *pKeyBoard = CManager::GetInputKeyboard();
+	if (pKeyBoard->GetPress(DIK_SPACE) == true)
+	{
+		m_pPlayer->SetAngle(D3DXToRadian(-40.0f));
+		m_pPlayer->Rotate({ PLAYER_POS_X ,PLAYER_POS_Y,0.0f }, { PLAYER_SCALE_X ,PLAYER_SCALE_Y ,0.0f });
+
+	}
 }
-
-
-

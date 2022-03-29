@@ -1,16 +1,10 @@
-﻿  scene.cpp
+﻿  player.cpp
   コードを生成中...
-  スキップ中... (関連する変更は検出されませんでした)
-  title.cpp
-  scene2D.cpp
-  result.cpp
-  polygon.cpp
-  player.cpp
+  コンパイル中...
   manager.cpp
   game.cpp
-  fade.cpp
-  bg.cpp
   XInput.cpp
-  Renderer.cpp
+c:\users\student\desktop\hackathon002\hackathonproj1\xinput.cpp(48): warning C4800: 'int': ブール値を 'true' または 'false' に強制的に設定します (警告の処理)
+  コードを生成中...
   Hackathonproj1.vcxproj -> C:\Users\student\Desktop\Hackathon002\Hackathonproj1\Debug\Hackathonproj1.exe
   Hackathonproj1.vcxproj -> C:\Users\student\Desktop\Hackathon002\Hackathonproj1\Debug\Hackathonproj1.pdb (Full PDB)

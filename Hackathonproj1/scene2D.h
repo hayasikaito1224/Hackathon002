@@ -45,13 +45,13 @@ public:
 	void SetCol(D3DXCOLOR col);						//テクスチャの設定
 	void Rotate();//ポリゴンの回転処理
 	void Rotate(D3DXVECTOR3 pos, D3DXVECTOR3 scale);//ポリゴンの回転処理
-
+	void SetAngle(float fAngle) { m_fAngle = fAngle; }
 private:
 
 protected:
 
-	LPDIRECT3DTEXTURE9		m_pTexture = NULL;				//テクスチャへのポインタ
-	LPDIRECT3DVERTEXBUFFER9 m_pVtxBuff = NULL;				//頂点バッファへのポインタ
+	LPDIRECT3DTEXTURE9		m_pTexture;				//テクスチャへのポインタ
+	LPDIRECT3DVERTEXBUFFER9 m_pVtxBuff;				//頂点バッファへのポインタ
 	bool m_bUse;
 	CTexture::Type			m_TexType;//テクスチャのタイプ
 	D3DXVECTOR3 m_pos;

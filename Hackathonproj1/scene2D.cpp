@@ -14,6 +14,8 @@ CScene2D::CScene2D(OBJTYPE nPriority) :CScene(nPriority)
 {
 	m_col = { 1.0,1.0,1.0,1.0 };
 	m_fAngle = 0.0f;
+	m_pTexture = nullptr;
+	m_pVtxBuff = nullptr;
 }
 
 //=============================================================================
@@ -30,7 +32,7 @@ CScene2D *CScene2D::Create(D3DXVECTOR3 pos, D3DXVECTOR3 scale, CTexture::Type te
 {
 
 	//インスタンス生成
-	CScene2D *pScene2D = new CScene2D(OBJTYPE_NONE);
+	CScene2D *pScene2D = new CScene2D;
 	if (pScene2D != NULL)
 	{
 		pScene2D->m_pos = pos;
@@ -113,10 +115,10 @@ HRESULT CScene2D::Init(void)
 	m_pVtxBuff->Lock(0, 0, (void**)&pVtx, 0);
 
 	//バッファの生成
-	pVtx[0].pos = D3DXVECTOR3(0.0f, 0.0f, 0.0f);
-	pVtx[1].pos = D3DXVECTOR3(0.0f, 0.0f, 0.0f);
-	pVtx[2].pos = D3DXVECTOR3(0.0f, 0.0f, 0.0f);
-	pVtx[3].pos = D3DXVECTOR3(0.0f, 0.0f, 0.0f);
+	pVtx[0].pos = D3DXVECTOR3(m_pos.x - m_scale.x, m_pos.y - m_scale.y, 0.0f);
+	pVtx[1].pos = D3DXVECTOR3(m_pos.x + m_scale.x, m_pos.y - m_scale.y, 0.0f);
+	pVtx[2].pos = D3DXVECTOR3(m_pos.x - m_scale.x, m_pos.y + m_scale.y, 0.0f);
+	pVtx[3].pos = D3DXVECTOR3(m_pos.x + m_scale.x, m_pos.y + m_scale.y, 0.0f);
 
 	pVtx[0].tex = D3DXVECTOR2(0.0, 0.0);
 	pVtx[1].tex = D3DXVECTOR2(1.0, 0.0);
@@ -157,6 +159,7 @@ void CScene2D::Uninit(void)
 //=============================================================================
 void CScene2D::Update(void)
 {
+	int n = 0;
 }
 
 //=============================================================================
@@ -314,6 +317,7 @@ void CScene2D::Rotate()
 	Rotatepos[1].y = (posOrigin[1].x * sinf(m_fAngle)) + (posOrigin[1].y * cosf(m_fAngle));
 	Rotatepos[2].y = (posOrigin[2].x * sinf(m_fAngle)) + (posOrigin[2].y * cosf(m_fAngle));
 	Rotatepos[3].y = (posOrigin[3].x * sinf(m_fAngle)) + (posOrigin[3].y * cosf(m_fAngle));
+
 	VERTEX_2D *pVtx;
 
 	m_pVtxBuff->Lock(0, 0, (void**)&pVtx, 0);
@@ -358,7 +362,7 @@ void CScene2D::Rotate(D3DXVECTOR3 pos, D3DXVECTOR3 scale)
 	Rotatepos[3].y = (posOrigin[3].x * sinf(m_fAngle)) + (posOrigin[3].y * cosf(m_fAngle));
 	VERTEX_2D *pVtx;
 
-	m_pVtxBuff->Lock(0, 0, (void**)&pVtx, 0);
+ 	m_pVtxBuff->Lock(0, 0, (void**)&pVtx, 0);
 
 	//バッファの生成
 	pVtx[0].pos = D3DXVECTOR3(pos.x + Rotatepos[0].x, pos.y + Rotatepos[0].y, 0.0f);

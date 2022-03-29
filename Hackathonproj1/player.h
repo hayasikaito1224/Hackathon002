@@ -7,12 +7,8 @@
 //------------------------------------
 //マクロ定義
 //------------------------------------
-#define PLAYER_POS_X (0.0)
-#define PLAYER_POS_Y (0.0)
-#define PLAYER_POS_Z (0.0)
-#define PLAYER_FALL (-100.0)//落下判定に入るまでの位置
 
-class CPlayer : public CScene2D
+class CPlayer : public CScene
 {
 public:
 	CPlayer(OBJTYPE nPriority = CScene::OBJTYPE_PLAYER);
@@ -26,7 +22,7 @@ public:
 	void Incline();//袋を傾ける処理
 
 private:
-	D3DXVECTOR3 m_pos; //位置
+	CScene2D *m_pPlayer;//砂袋
 	bool m_bGameStop;
 };
 
