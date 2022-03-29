@@ -78,7 +78,7 @@ HRESULT CNumber::Init(D3DXVECTOR3 pos, D3DXVECTOR3 size)
 	//頂点バッファをアンロック
 	m_pVtxBuff->Unlock();
 
-	m_pTexture = CManager::GetTexture()->GetTexture(CTexture::Test);
+	m_pTexture = CManager::GetTexture()->GetTexture(CTexture::Number);
 
 	return S_OK;
 }

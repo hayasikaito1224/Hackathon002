@@ -27,7 +27,7 @@ typedef struct
 class CScene2D : public CScene
 {
 public:
-	CScene2D(OBJTYPE nPriority = OBJTYPE_NONE);
+	CScene2D(OBJTYPE nPriority);
 	~CScene2D();
 	HRESULT Init(CTexture::Type type);
 	HRESULT Init(void);
@@ -35,7 +35,7 @@ public:
 	void Uninit(void);
 	void Update(void);
 	void Draw(void);
-	static CScene2D *Create(D3DXVECTOR3 pos, D3DXVECTOR3 scale, CTexture::Type texture = CTexture::Test);
+	static CScene2D *Create(D3DXVECTOR3 pos, D3DXVECTOR3 scale, CTexture::Type texture = CTexture::Test,CScene::OBJTYPE type = CScene::OBJTYPE_NONE);
 	void SetPos(D3DXVECTOR3 vtx0, D3DXVECTOR3 vtx1, D3DXVECTOR3 vtx2, D3DXVECTOR3 vtx3);//頂点座標の設定
 	void SetPos(D3DXVECTOR3 pos, D3DXVECTOR3 scale);		//頂点座標の設定
 	void BindTexture(CTexture::Type type);

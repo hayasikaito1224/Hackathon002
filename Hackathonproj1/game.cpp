@@ -49,16 +49,18 @@ CGame::~CGame()
 //--------------------------------------------
 HRESULT CGame::Init()
 {
-	//プレイヤーの生成
-	if (!m_Player)
-	{
-		m_Player = CPlayer::Create();
-	}
 
+	//背景の生成
+	CBg::Create(CTexture::GameBg, CScene::OBJTYPE_BG, false);
 	//プレイヤーの生成
 	if (!m_Weight)
 	{
 		m_Weight = CWeight::Create(D3DXVECTOR3(50.0f, 50.0f, 50.0f), D3DXVECTOR3(30.0f, 50.0f, 50.0f));
+	}
+	//プレイヤーの生成
+	if (!m_Player)
+	{
+		m_Player = CPlayer::Create();
 	}
 
 	m_fAlpha = 1.0f;
