@@ -8,6 +8,7 @@
 #include "manager.h"
 #include "renderer.h"
 #include "keyboard.h"
+#include "data.h"
 
 //=============================================================================
 // コンストラクタ
@@ -59,12 +60,15 @@ void CTime::Uninit(void)
 //=============================================================================
 void CTime::Update(void)
 {
-	m_nCommaTime++;
-
-	if (m_nCommaTime >= 60)
+	if (CManager::GetData()->GetNowGame())
 	{
-		m_nTime--;
-		m_nCommaTime = 0;
+		m_nCommaTime++;
+
+		if (m_nCommaTime >= 60)
+		{
+			m_nTime--;
+			m_nCommaTime = 0;
+		}
 	}
 
 	if (m_nTime > MAX_TIME)
