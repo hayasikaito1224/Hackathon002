@@ -34,7 +34,8 @@ HRESULT CTitle::Init(void)
 {
 	m_bNextMode = false;
 	//CBg::Create(CTexture::Title, CScene::OBJTYPE_BG, false);	//”wŒi
-	//m_Polygon = CPolygon::Create(D3DXVECTOR3(SCREEN_WIDTH/2.0f, SCREEN_HEIGHT / 2 + 100.0f, 0.0f), D3DXVECTOR3(430.0f, 80.0f, 0.0f), CTexture::GameStart);	//ƒ^ƒCƒgƒ‹ƒƒS
+	
+	m_Polygon = CPolygon::Create(D3DXVECTOR3(SCREEN_WIDTH/2.0f, SCREEN_HEIGHT / 2 - 100.0f, 0.0f), D3DXVECTOR3(350.0f, 200.0f, 0.0f), CTexture::TitleLogo);	//ƒ^ƒCƒgƒ‹ƒƒS
 	return S_OK;
 }
 //--------------------------------------------
@@ -57,11 +58,14 @@ void CTitle::Update(void)
 {
 	CXInput *pGamePad = CManager::GetXInput();
 	CDirectInput *pDGamePad = CManager::GetDirectInput();
+	CInputKeyBoard *pKeyBoard = CManager::GetInputKeyboard();
 
 	//Aƒ{ƒ^ƒ“‚ð‰Ÿ‚·‚Æ
 	if (pGamePad->GetButtonTrigger(XINPUT_GAMEPAD_A) == true ||
 		pGamePad->GetButtonTrigger(XINPUT_GAMEPAD_START) == true||
-		pDGamePad->GetButtonTrigger(CDirectInput::START)==true)
+		pDGamePad->GetButtonTrigger(CDirectInput::START)==true ||
+		pKeyBoard->GetTrigger(DIK_SPACE) == true ||
+		pKeyBoard->GetTrigger(DIK_RETURN) == true)
 	{
 		if (m_bNextMode == false)
 		{

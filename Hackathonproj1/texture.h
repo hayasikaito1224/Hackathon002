@@ -29,6 +29,7 @@ public:
 		GameBg,			//ゲームの背景
 		Balance,		//秤
 		Fade,			//フェード
+		TitleLogo,		// タイトルロゴ
 		Max,			// テクスチャの最大数
 	} Type;
 

@@ -1,2 +1,10 @@
 #TargetFrameworkVersion=v4.0:PlatformToolSet=v140:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit:WindowsTargetPlatformVersion=8.1
+<<<<<<< HEAD
 Debug|Win32|C:\Users\student\Desktop\git\Hackathon002\Hackathonproj1\|
+=======
+<<<<<<< HEAD
+Debug|Win32|C:\Users\student\Desktop\Hackathon002\Hackathonproj1\|
+=======
+Debug|Win32|C:\Users\student\Desktop\git接続フォルダ\Hackathon002\Hackathonproj1\|
+>>>>>>> 3ad8328b00c121c17b1dd9d2271785d35fdf3891
+>>>>>>> ff92dd26db01f2d33b19bfc3cb17fd7cd1d0e488
