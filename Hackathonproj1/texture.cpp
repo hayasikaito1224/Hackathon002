@@ -72,6 +72,12 @@ void CTexture::Init(void)
 	D3DXCreateTextureFromFile(pDevice,
 		"data/TEXTURE/TitleLogo.png",//タイトルロゴ
 		&m_pTexture[TitleLogo]);
+
+	//テクスチャの読み込み
+	D3DXCreateTextureFromFile(pDevice,
+		"data/TEXTURE/Effect000.jpg",//エフェクト（粒）
+		&m_pTexture[Effect]);
+
 }
 
 //=============================================================================
