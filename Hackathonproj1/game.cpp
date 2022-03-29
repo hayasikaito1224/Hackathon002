@@ -20,6 +20,8 @@
 #include <random>
 #include "hide.h"
 static const D3DXVECTOR3 BalanceSize = { 250.0f, 125.0f, 0.0f };//秤の大きさ
+static const D3DXVECTOR3 SignSize = { 230.0f, 180.0f, 0.0f };//看板の大きさ
+
 static const D3DXVECTOR3 BalancePos = { SCREEN_WIDTH/2, 550.0f, 0.0f };//秤の位置
 
 //静的メンバ変数宣言
@@ -30,6 +32,7 @@ CWeight *CGame::m_Weight = nullptr;
 CTime *CGame::m_Time = nullptr;
 CGoalScore *CGame::m_GoalScore = nullptr;
 CHide *CGame::m_Hide = nullptr;
+CPolygon *CGame::m_Sign = nullptr;
 
 static float s_texrotx = 0.0f;
 static float s_texseax = 0.0f;
@@ -50,6 +53,7 @@ CGame::CGame()
 	m_bGameEnd = false;
 	m_GoalScore = nullptr;
 	m_Hide = nullptr;
+	m_Sign = nullptr;
 }
 //--------------------------------------------
 //デストラクタ
@@ -91,7 +95,7 @@ HRESULT CGame::Init()
 	//目標重量用数字の生成
 	if (!m_GoalScore)
 	{
-		m_GoalScore = CGoalScore::Create(D3DXVECTOR3(SCREEN_WIDTH - (40.0f * 8.0f), SCREEN_HEIGHT - (60.0f * 2.0f), 0.0f), D3DXVECTOR3(40.0f, 60.0f, 0.0f));
+		m_GoalScore = CGoalScore::Create(D3DXVECTOR3(SCREEN_WIDTH - (30.0f * 11.0f), SCREEN_HEIGHT - (50.0f * 3.0f), 0.0f), D3DXVECTOR3(30.0f, 50.0f, 0.0f));
 	}
 
 	//プレイヤーの生成
@@ -104,6 +108,11 @@ HRESULT CGame::Init()
 	if (!m_Hide)
 	{
 		m_Hide = CHide::Create();
+	}
+	//看板
+	if (!m_Sign)
+	{
+		m_Sign = CPolygon::Create({ SCREEN_WIDTH - 200.0f,SCREEN_HEIGHT - 120.0f,0.0f }, SignSize, CTexture::SignBoard);
 	}
 	m_fAlpha = 1.0f;
 	m_bNextMode = false;
@@ -127,6 +136,12 @@ void CGame::Uninit()
 	{
 		m_Polygon->Uninit();
 		m_Polygon = nullptr;
+	}
+
+	if (m_Sign != nullptr)
+	{
+		m_Sign->Uninit();
+		m_Sign = nullptr;
 	}
 
 	if (m_Weight != nullptr)
