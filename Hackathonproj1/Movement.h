@@ -10,7 +10,7 @@
 class CMovement : public CEffect
 {
 public:
-	CMovement(int nPriority);
+	CMovement(OBJTYPE nPlyorty = CScene::OBJTYPE_EFFECT);
 	~CMovement();
 
 	HRESULT Init(D3DXVECTOR3 pos, D3DXVECTOR3 move, D3DCOLORVALUE color, D3DCOLORVALUE Mincolor, D3DXVECTOR2 Size, D3DXVECTOR2 MinSize, int nLife, int nType, D3DXVECTOR3 AddMovement);
