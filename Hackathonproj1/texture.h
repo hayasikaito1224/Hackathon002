@@ -33,13 +33,10 @@ public:
 		TitleEnter,		// タイトル文字
 		TitleBG,		// タイトル背景
 		Effect,			//エフェクト（粒）
-<<<<<<< HEAD
 		Star,			//エフェクト（星）
-=======
 		Start,			// スタート文字
 		Finish,			// フィニッシュ文字
 		Rule,			// タイトルに表示するルール
->>>>>>> 55785667e568469be055e3913eebc29e528cf78f
 		Max,			// テクスチャの最大数
 	} Type;
 
