@@ -68,6 +68,10 @@ void CTexture::Init(void)
 		"data/TEXTURE/black.png",//フェード
 		&m_pTexture[Fade]);
 
+	//テクスチャの読み込み
+	D3DXCreateTextureFromFile(pDevice,
+		"data/TEXTURE/TitleLogo.png",//タイトルロゴ
+		&m_pTexture[TitleLogo]);
 }
 
 //=============================================================================
