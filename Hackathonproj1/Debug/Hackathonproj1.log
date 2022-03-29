@@ -1,8 +1,14 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿  player.cpp
 c:\users\student\desktop\gitゲームフォルダ\hackathon002\hackathonproj1\player.cpp(104): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
   Hackathonproj1.vcxproj -> C:\Users\student\Desktop\Gitゲームフォルダ\Hackathon002\Hackathonproj1\Debug\Hackathonproj1.exe
   Hackathonproj1.vcxproj -> C:\Users\student\Desktop\Gitゲームフォルダ\Hackathon002\Hackathonproj1\Debug\Hackathonproj1.pdb (Full PDB)
+=======
+﻿  game.cpp
+  Hackathonproj1.vcxproj -> C:\Users\student\Desktop\Hackathon002\Hackathonproj1\Debug\Hackathonproj1.exe
+  Hackathonproj1.vcxproj -> C:\Users\student\Desktop\Hackathon002\Hackathonproj1\Debug\Hackathonproj1.pdb (Full PDB)
+>>>>>>> 4ebaff857e972e484031c806322ad377b3d7a127
 =======
 <<<<<<< HEAD
 ﻿  effect.cpp

@@ -15,6 +15,9 @@
 #include "directinput.h"
 #include "weight.h"
 
+static const D3DXVECTOR3 BalanceSize = { 250.0f,150.0f,0.0f };//秤の大きさ
+static const D3DXVECTOR3 BalancePos = { SCREEN_WIDTH/2,550.0f,0.0f };//秤の位置
+
 //静的メンバ変数宣言
 CBg		*CGame::m_pBg = nullptr;
 CPlayer	*CGame::m_Player = nullptr;
@@ -52,6 +55,7 @@ HRESULT CGame::Init()
 
 	//背景の生成
 	CBg::Create(CTexture::GameBg, CScene::OBJTYPE_BG, false);
+	CPolygon::Create(BalancePos, BalanceSize, CTexture::Balance);
 	//プレイヤーの生成
 	if (!m_Weight)
 	{
