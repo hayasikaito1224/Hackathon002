@@ -17,7 +17,7 @@
 #include "sound.h"
 #include "directinput.h"
 #include <random>
-
+#include "data.h"
 //エフェクト
 #include "LoadEffect.h"
 
@@ -41,6 +41,8 @@ CMouse			*CManager::m_Mouse = NULL;
 CSound			*CManager::m_pSound = NULL;
 CPause			*CManager::m_pPause = NULL;
 CDirectInput	*CManager::m_pDirectInput = NULL;
+CData			*CManager::m_pData = NULL;
+
 bool			CManager::m_bPause = false;
 bool			CManager::m_bStop = false;
 bool			CManager::m_bEnd = false;
@@ -64,6 +66,9 @@ CManager::~CManager()
 //--------------------------------------------
 HRESULT CManager::Init(HINSTANCE hInstance, HWND hWnd, bool bWindow)
 {
+	//データ管理の生成
+	m_pData = new CData;
+
 	// レンダラーの生成
 	if (m_pRenderer == NULL)
 	{
