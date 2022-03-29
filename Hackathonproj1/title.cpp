@@ -11,6 +11,10 @@
 #include "XInput.h"
 #include "sound.h"
 #include "directinput.h"
+
+//エフェクト
+#include "SetEffect.h"
+
 //--------------------------------------------
 //コンストラクタ
 //--------------------------------------------
@@ -81,6 +85,9 @@ void CTitle::Update(void)
 		{
 			CManager::GetSound()->PlaySoundA(CSound::SOUND_LABEL_SE_ENTER);
 			CManager::GetSound()->ControllVoice(CSound::SOUND_LABEL_SE_ENTER, 0.6f);
+
+			//スタートの位置にエフェクトの発生
+			CSetEffect::SetEffect(4, D3DXVECTOR3(SCREEN_WIDTH / 3.0f, SCREEN_HEIGHT / 2 + 200.0f, 0.0f), {});
 
 			//ゲームモードへ行く
 			CFade::SetFade(CManager::MODE_GAME);

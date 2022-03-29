@@ -94,4 +94,26 @@ EFFECTSTATE2D
 	MOUSEPOS = 1						//マウス追従ON 1だと有効
 END_EFFECTSTATE2D
 
+#========================================================================
+#エフェクトパターン 4番目
+#メモ：スタートパーティクル１
+#========================================================================
+EFFECTSTATE2D
+	PATTERN = 4				//動きのパターン
+	POS = 640.0 360.0				//座標
+	ROTATE = 0.06					//回転
+	SIZE = 20.0						//大きさ
+	ADDSIZE = 0.0					//大きさ変動
+	COLOR = 255 255 255 255			//カラー
+	CHANGECOLOR = 0 0 0 0			//カラー変動値
+	LIFE = 60						//ライフ
+	DENSITY = 6						//密度
+	COLORRANDR = 1						//カラーランダム赤 1だと有効
+	COLORRANDG = 1						//カラーランダム緑 1だと有効
+	COLORRANDB = 1						//カラーランダム青 1だと有効
+	MOVERANDX = 1						//移動ランダムX 1だと有効
+	MOVERANDY = 1						//移動ランダムY 1だと有効
+	MOUSEPOS = 1						//マウス追従ON 1だと有効
+END_EFFECTSTATE2D
+
 END_SCRIPT

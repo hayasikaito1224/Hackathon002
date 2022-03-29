@@ -106,11 +106,11 @@ void CPlayer::Incline()
 		if (pWeight->GetWeight() > 0)	//0以下で発生しない
 		{
 			//エフェクトの発生
-			//CSetEffect::SetEffect(0, m_pPlayer->GetEffect(), {});	//黄色粒
-			//CSetEffect::SetEffect(1, m_pPlayer->GetEffect(), {});	//白粒(小)
-			//CSetEffect::SetEffect(2, m_pPlayer->GetEffect(), {});	//白粒(大)
+			CSetEffect::SetEffect(0, m_pPlayer->GetEffect(), {});	//黄色粒
+			CSetEffect::SetEffect(1, m_pPlayer->GetEffect(), {});	//白粒(小)
+			CSetEffect::SetEffect(2, m_pPlayer->GetEffect(), {});	//白粒(大)
 
-			CSetEffect::SetEffect(3, m_pPlayer->GetEffect(), {});	//白粒(大)
+			//CSetEffect::SetEffect(3, m_pPlayer->GetEffect(), {});	//星
 
 		}
 
