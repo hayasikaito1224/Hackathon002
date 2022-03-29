@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿  XInput.cpp
 c:\users\student\desktop\git\hackathon002\hackathonproj1\xinput.cpp(48): warning C4800: 'int': ブール値を 'true' または 'false' に強制的に設定します (警告の処理)
   weight.cpp
@@ -35,3 +36,9 @@ c:\users\student\desktop\git\hackathon002\hackathonproj1\loadeffect.cpp(165): wa
   LINK : 前回のインクリメンタル リンクで C:\Users\student\Desktop\git\Hackathon002\Hackathonproj1\Debug\Hackathonproj1.exe が見つからなかったか、ビルドされませんでした。フル リンクを行います。
   Hackathonproj1.vcxproj -> C:\Users\student\Desktop\git\Hackathon002\Hackathonproj1\Debug\Hackathonproj1.exe
   Hackathonproj1.vcxproj -> C:\Users\student\Desktop\git\Hackathon002\Hackathonproj1\Debug\Hackathonproj1.pdb (Full PDB)
+=======
+﻿  player.cpp
+c:\users\student\desktop\gitゲームフォルダ\hackathon002\hackathonproj1\player.cpp(104): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  Hackathonproj1.vcxproj -> C:\Users\student\Desktop\Gitゲームフォルダ\Hackathon002\Hackathonproj1\Debug\Hackathonproj1.exe
+  Hackathonproj1.vcxproj -> C:\Users\student\Desktop\Gitゲームフォルダ\Hackathon002\Hackathonproj1\Debug\Hackathonproj1.pdb (Full PDB)
+>>>>>>> 4b7918da1f10405ad7b3b54f1b536ec38d261d96

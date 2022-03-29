@@ -18,7 +18,7 @@
 //マクロ定義
 //------------------------------------
 #define PLAYER_POS_X (SCREEN_WIDTH/2.0f)
-#define PLAYER_POS_Y (SCREEN_HEIGHT/2.0f)
+#define PLAYER_POS_Y (SCREEN_HEIGHT/2.0f - 45)
 #define PLAYER_SCALE_X (140.0)
 #define PLAYER_SCALE_Y (140.0)
 #define PLAYER_ANGLE_MAX (40.0)//傾きの最大値

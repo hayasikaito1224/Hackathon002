@@ -14,15 +14,17 @@
 #include "XInput.h"
 #include "directinput.h"
 #include "weight.h"
+#include "time.h"
 
-static const D3DXVECTOR3 BalanceSize = { 250.0f,150.0f,0.0f };//秤の大きさ
-static const D3DXVECTOR3 BalancePos = { SCREEN_WIDTH/2,550.0f,0.0f };//秤の位置
+static const D3DXVECTOR3 BalanceSize = { 250.0f, 125.0f, 0.0f };//秤の大きさ
+static const D3DXVECTOR3 BalancePos = { SCREEN_WIDTH/2, 550.0f, 0.0f };//秤の位置
 
 //静的メンバ変数宣言
 CBg		*CGame::m_pBg = nullptr;
 CPlayer	*CGame::m_Player = nullptr;
 CPolygon *CGame::m_Polygon = nullptr;
 CWeight *CGame::m_Weight = nullptr;
+CTime *CGame::m_Time = nullptr;
 
 static float s_texrotx = 0.0f;
 static float s_texseax = 0.0f;
@@ -38,6 +40,7 @@ CGame::CGame()
 	m_pBg = nullptr;
 	m_Polygon = nullptr;
 	m_Weight = nullptr;
+	m_Time = nullptr;
 	m_bPush = false;
 	m_bEnd = false;
 }
@@ -56,11 +59,19 @@ HRESULT CGame::Init()
 	//背景の生成
 	CBg::Create(CTexture::GameBg, CScene::OBJTYPE_BG, false);
 	CPolygon::Create(BalancePos, BalanceSize, CTexture::Balance);
-	//プレイヤーの生成
+
+	//秤用数字の生成
 	if (!m_Weight)
 	{
-		m_Weight = CWeight::Create(D3DXVECTOR3(50.0f, 50.0f, 50.0f), D3DXVECTOR3(30.0f, 50.0f, 50.0f));
+		m_Weight = CWeight::Create(D3DXVECTOR3(525.0f, 575.0f, 0.0f), D3DXVECTOR3(25.0f, 45.0f, 0.0f));
 	}
+
+	//時間用数字の生成
+	if (!m_Time)
+	{
+		m_Time = CTime::Create(D3DXVECTOR3((SCREEN_WIDTH / 2) - 50, 50.0f, 0.0f), D3DXVECTOR3(40.0f, 60.0f, 0.0f));
+	}
+
 	//プレイヤーの生成
 	if (!m_Player)
 	{
@@ -95,6 +106,12 @@ void CGame::Uninit()
 		m_Weight->Uninit();
 		m_Weight = nullptr;
 	}
+
+	if (m_Time != nullptr)
+	{
+		m_Time->Uninit();
+		m_Time = nullptr;
+	}
 }
 //--------------------------------------------
 //更新
@@ -112,5 +129,6 @@ void CGame::Update()
 //--------------------------------------------
 void CGame::Draw()
 {
+
 }
 
