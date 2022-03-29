@@ -11,7 +11,7 @@
 class CEffect : public CScene2D
 {
 public:
-	CEffect(int nPriority = 3);
+	CEffect(OBJTYPE nPlyorty = CScene::OBJTYPE_EFFECT);
 	virtual ~CEffect();
 
 	virtual HRESULT Init(D3DXVECTOR3 pos, D3DCOLORVALUE color, D3DCOLORVALUE Mincolor, D3DXVECTOR2 Size, D3DXVECTOR2 MinSize, int nLife, int nType);
