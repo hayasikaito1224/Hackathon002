@@ -85,27 +85,10 @@ void CTime::Update(void)
 	if (m_nTime <= 0)
 	{
 		m_nTime = 0;
-<<<<<<< HEAD
-
-		if (m_bNextMode == false)
-		{
-			//CManager::GetSound()->PlaySoundA(CSound::SOUND_LABEL_SE_ENTER);
-			//CManager::GetSound()->ControllVoice(CSound::SOUND_LABEL_SE_ENTER, 0.6f);
-
-			pData->SetScore(abs(pData->GetTargetScore() - int(CManager::GetData()->GetSandRemaining() * 10.0f)));
-
-			//リザルトモードへ行く
-			CFade::SetFade(CManager::MODE_RESULT);
-
-			//二回以上通らないようにする
-			m_bNextMode = true;
-
-			pData->ReverseNowGame();
-		}
-=======
+		pData->ReverseNowGame();
 		//スコアをセット
-		pData->SetScore(abs(abs(pData->GetTargetScore()) - abs(CManager::GetGame()->GetPlayer()->GetSandRemaining() * 10.0f)));
->>>>>>> d9e02a80d5581a093dca612cafe233b02a225b88
+		pData->SetScore(abs(abs(pData->GetTargetScore()) - abs(CManager::GetData()->GetSandRemaining() * 10.0f)));
+
 	}
 
 	for (int nCnt = 0; nCnt < TIME_DIGITS; nCnt++)

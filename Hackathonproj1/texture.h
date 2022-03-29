@@ -37,6 +37,7 @@ public:
 		Start,			// スタート文字
 		Finish,			// フィニッシュ文字
 		Rule,			// タイトルに表示するルール
+		SignBoard,		//看板
 		Max,			// テクスチャの最大数
 	} Type;
 

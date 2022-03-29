@@ -104,6 +104,11 @@ void CTexture::Init(void)
 	D3DXCreateTextureFromFile(pDevice,
 		"data/TEXTURE/rule.png",//ÉãÅ[Éã
 		&m_pTexture[Rule]);
+
+	D3DXCreateTextureFromFile(pDevice,
+		"data/TEXTURE/Signboard.png",//ä≈î¬
+		&m_pTexture[SignBoard]);
+
 }
 
 //=============================================================================
