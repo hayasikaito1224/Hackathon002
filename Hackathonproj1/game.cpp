@@ -15,7 +15,8 @@
 #include "directinput.h"
 #include "weight.h"
 #include "time.h"
-
+#include "data.h"
+#include <random>
 static const D3DXVECTOR3 BalanceSize = { 250.0f, 125.0f, 0.0f };//秤の大きさ
 static const D3DXVECTOR3 BalancePos = { SCREEN_WIDTH/2, 550.0f, 0.0f };//秤の位置
 
@@ -55,7 +56,14 @@ CGame::~CGame()
 //--------------------------------------------
 HRESULT CGame::Init()
 {
-
+	{//目標のスコアの生成
+		std::random_device random;	// 非決定的な乱数生成器
+		std::mt19937_64 mt(random());            // メルセンヌ・ツイスタの64ビット版、引数は初期シード
+		std::uniform_real_distribution<> randTargetScore(0.0f, 30.0f);
+		int nTargetScore = randTargetScore(mt) * 10;
+		CData *pData = CManager::GetData();
+		pData->SetTargetScore(nTargetScore);
+	}
 	//背景の生成
 	CBg::Create(CTexture::GameBg, CScene::OBJTYPE_BG, false);
 	CPolygon::Create(BalancePos, BalanceSize, CTexture::Balance);
