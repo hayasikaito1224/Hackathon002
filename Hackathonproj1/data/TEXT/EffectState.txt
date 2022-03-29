@@ -8,7 +8,7 @@
 #========================================================================
 EFFECTSTATE2D
 	PATTERN = 1				//動きのパターン
-	POS = 775.0 381.0				//座標
+	POS = 375.0 381.0				//座標
 	MOVE = 0.0 -8.0					//動き
 	ADDMOVE = -0.0 0.2				//動き加算値
 	SIZE = 20.0						//大きさ
@@ -20,7 +20,7 @@ EFFECTSTATE2D
 	COLORRANDR = 0						//カラーランダム赤 1だと有効
 	COLORRANDG = 0						//カラーランダム緑 1だと有効
 	COLORRANDB = 0						//カラーランダム青 1だと有効
-	MOVERANDX = 1						//移動ランダムX 1だと有効
+	MOVERANDX = 0						//移動ランダムX 1だと有効
 	MOVERANDY = 0						//移動ランダムY 1だと有効
 	MOUSEPOS = 0						//マウス追従ON 1だと有効
 END_EFFECTSTATE2D

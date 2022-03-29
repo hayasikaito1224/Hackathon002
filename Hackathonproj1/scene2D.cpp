@@ -146,7 +146,7 @@ HRESULT CScene2D::Init(void)
 void CScene2D::Uninit(void)
 {
 	//頂点バッファの破棄
-	if (m_pVtxBuff != NULL)
+  	if (m_pVtxBuff != NULL)
 	{
 		m_pVtxBuff->Release();
 		m_pVtxBuff = NULL;

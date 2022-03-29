@@ -72,65 +72,23 @@ void CResult::Update(void)
 {
 
 	CXInput *pGamePad = CManager::GetXInput();
-
-	if (m_bNextMode == false)
-	{
-		if (pGamePad->GetButtonTrigger(XINPUT_GAMEPAD_DPAD_UP) == true)
-		{
-			m_nSelectType--;
-			if (m_nSelectType < 0)
-			{
-				m_nSelectType = TITLE;
-			}
-
-			CManager::GetSound()->PlaySoundA(CSound::SOUND_LABEL_SE_SELECT);
-		}
-		else if (pGamePad->GetButtonTrigger(XINPUT_GAMEPAD_DPAD_DOWN) == true)
-		{
-			m_nSelectType++;
-			if (m_nSelectType >= MAX)
-			{
-				m_nSelectType = GAME_RETRY;
-			}
-
-			CManager::GetSound()->PlaySoundA(CSound::SOUND_LABEL_SE_SELECT);
-		}
-
-	}
-
-	switch (m_nSelectType)
-	{
-	case GAME_RETRY:
-		m_Cursol->SetPos(D3DXVECTOR3(pPolygon[1]->GetPos().x - pPolygon[1]->GetScale().x - 20.0f, pPolygon[1]->GetPos().y, 0.0f));
-		break;
-	case TITLE:
-		m_Cursol->SetPos(D3DXVECTOR3(pPolygon[2]->GetPos().x - pPolygon[2]->GetScale().x - 20.0f, pPolygon[2]->GetPos().y, 0.0f));
-		break;
-	}
+	CInputKeyBoard *pKeyBoard = CManager::GetInputKeyboard();
 
 	//Aボタンを押すと
-	if (pGamePad->GetButtonTrigger(XINPUT_GAMEPAD_A) == true && m_bNextMode == false)
+	if (pGamePad->GetButtonTrigger(XINPUT_GAMEPAD_A) == true ||
+		pKeyBoard->GetTrigger(DIK_SPACE) == true ||
+		pKeyBoard->GetTrigger(DIK_RETURN) == true)
 	{
-		CManager::GetSound()->PlaySoundA(CSound::SOUND_LABEL_SE_ENTER);
-		CManager::GetSound()->ControllVoice(CSound::SOUND_LABEL_SE_ENTER, 0.6f);
-
-		switch (m_nSelectType)
+		if (m_bNextMode == false)
 		{
-		case GAME_RETRY:
-			//ゲームモードへ行く
-			CFade::SetFade(CManager::MODE_GAME);
-			////二回以上通らないようにする
-			m_bNextMode = true;
+			CManager::GetSound()->PlaySoundA(CSound::SOUND_LABEL_SE_ENTER);
+			CManager::GetSound()->ControllVoice(CSound::SOUND_LABEL_SE_ENTER, 0.6f);
 
-			break;
-		case TITLE:
-			//ゲームモードへ行く
+			//タイトルへ行く
 			CFade::SetFade(CManager::MODE_TITLE);
 			////二回以上通らないようにする
 			m_bNextMode = true;
-			break;
 		}
-
 	}
 }
 //--------------------------------------------
