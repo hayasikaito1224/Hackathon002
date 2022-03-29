@@ -11,6 +11,7 @@ class CBg;
 class CPlayer;
 class CPolygon;
 class CWeight;
+class CTime;
 
 class CGame
 {
@@ -25,6 +26,7 @@ public:
 
 	static CPlayer *GetPlayer() { return m_Player; }
 	static CWeight *GetWeight() { return m_Weight; }
+	static CTime *GetTime()		{ return m_Time; }
 
 private:
 
@@ -32,6 +34,8 @@ private:
 	static CPlayer		*m_Player;
 	static CPolygon		*m_Polygon;
 	static CWeight		*m_Weight;
+	static CTime		*m_Time;
+
 	bool m_bPush;
 	bool m_bEnd;
 	float				m_fAlpha;
